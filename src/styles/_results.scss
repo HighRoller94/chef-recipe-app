@@ -1,0 +1,62 @@
+.banner__background {
+    background-image: url("../assets/results__banner.svg");
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    .search__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 150px;
+        h1 {
+            color: white;
+            font-size: 5rem;
+        }
+    }
+    .recipes__search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        .search__box {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 30px;
+            width: 400px;
+            .search__icon {
+                opacity: 0.7;
+                margin: 0 20px;
+                color: grey;
+            }
+            input {
+                outline: none;
+                border: none;
+                width: 100%;
+                font-size: 1rem;
+                padding: 0 30px 0 0;
+            }
+        }
+    }
+    .sub__options {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            padding-bottom: 100px;
+            span {
+                padding: 5px 20px;
+                background-color: white;
+                color: black;
+                margin: 5px 20px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                    transition: 100ms ease-in;
+                }
+            }
+        }
+}

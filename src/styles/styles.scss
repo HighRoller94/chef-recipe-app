@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@import './navbar';
+@import './home';
+@import './recipe';
+@import './recipes';
+@import './results';
+
+
+* {
+    margin: 0;
+    font-family: 'Poppins';
+    a:-webkit-any-link {
+        text-decoration: none;
+        color: inherit;
+    }
+}

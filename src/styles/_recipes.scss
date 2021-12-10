@@ -1,0 +1,27 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+    p {
+        margin: 0 10px;
+        font-size: 1.3rem;
+    }
+    .pagination__icon {
+        font-size: 1.5rem;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.recipes {
+    display: grid;
+    justify-content: center;
+    width: 80%;
+    grid-template-columns: 40% 40%;
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+    margin: auto;
+}

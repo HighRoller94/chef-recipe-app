@@ -1,0 +1,53 @@
+.nav {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 65%;
+        margin: auto;
+        .nav__logo {
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.8rem;
+        }
+        .nav__links {
+            display: flex;
+            align-items: center;
+            .nav__link {
+                margin: 0 30px;
+                transition: 200ms ease-in;
+                opacity: 0.8;
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    opacity: 1;
+                }
+            }
+            .nav__signup {
+                background-color:#f3a2a2;
+                color: white;
+                font-weight: 600;
+                padding: 5px 15px;
+                border-radius: 15px;
+                border: none;
+                font-size: 1rem;
+                outline: none;
+                margin-left: 20px;
+                transition: 200ms ease-in;
+                &:hover {
+                    background-color: white;
+                    color: #f3a2a2;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+    }
+}
