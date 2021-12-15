@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import SearchIcon from '@material-ui/icons/Search'
+
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
 
 import Recipes from '../components/Recipes'
 
@@ -29,39 +31,36 @@ function Results() {
     }, [id, pagination]);
 
     const getRecipes = async () => {
-        const response = await fetch(`https://api.edamam.com/search?q=${id}&app_id=${APP_ID}&app_key=${APP_KEY}&from=${pagination}&to=${pagination+10}`);
+        const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${id}&app_id=${APP_ID}&app_key=${APP_KEY}&from=${pagination}&to=${pagination+10}`);
         const data = await response.json();
+        console.log(data)
+        setRecipes(data.hits)
         setPages(data.count)
         console.log(data.count)
-        setRecipes(data.hits)
     }
 
     return (
         <div className="results__page">
-            <div className="banner__background">
-                <div className="search__header">
-                    <h1>Results for {id}</h1>
+            <div className="search__header">
+                <div className="search__container">
+                    <div className="float__bar"></div>
+                    <div className="search__title">
+                        <h1>Search results for "{id}"</h1>
+                        <p>{pages} matching results</p>
+                    </div>
                 </div>
-                <div className="recipes__search">
-                    <form onSubmit={getSearch}>
-                        <div className="search__box">
-                            <SearchIcon className="search__icon" />
-                            <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for your next meal..." />
-                        </div>
-                    </form>
-                </div>
-                <div className="sub__options">
-                    <span className="sub__option">beef</span>
-                    <span className="sub__option">pork</span>
-                    <span className="sub__option">chicken</span>
-                    <span className="sub__option">lamb</span>
-                    <span className="sub__option">pizza</span>
-                    <span className="sub__option">salads</span>
-                    <span className="sub__option">burgers</span>
-                    <span className="sub__option">vegetarian</span>
+                <div className="filter">
+                    <p>Filter</p>
+                    <KeyboardArrowDownIcon className="filter__icon" />
                 </div>
             </div>
+            <div className="border">
+                <span className="bar"></span><p>just in time</p><span className="bar"></span>
+            </div>
             <Recipes pages={pages} recipes={recipes} pagination={pagination} setPagination={setPagination} />
+            <div className="border">
+                <span className="bar"></span><p>just in time</p><span className="bar"></span>
+            </div>
         </div>
     )
 }

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Search from './components/Search';
 import Results from './pages/Results';
-
+import Home from './pages/Home';
 import Navbar from './components/Navbar';
+
+import ScrollToTop from './ScrollToTop';
 
 import './styles/styles.scss'
 
@@ -12,6 +14,7 @@ function App() {
   return (
     <div className="app">
       <Router>
+        <ScrollToTop />
         <Switch>
         <Route path='/search/:id'>
             <Navbar />
@@ -19,6 +22,7 @@ function App() {
           </Route>
           <Route path='/'>
             <Navbar />
+            <Search />
             <Home />
           </Route>
         </Switch>

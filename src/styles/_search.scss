@@ -1,0 +1,103 @@
+.search__section {
+    background-image: url("../assets/hero__back.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(243, 162, 162, 0.1); /* Tint color */
+    background-blend-mode: multiply;
+    height: 47vh;
+    width: 100%;
+    top: 0;
+    .search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        justify-content: center;
+        padding-top: 125px;
+        margin-left: -5px;
+        h1 {
+            color: #f3f3f3;
+            font-size: 3rem;
+            font-family: 'Culinary';
+            margin-bottom: 2px;
+        }
+        .link {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .form {
+            width: 30vw;
+            .search__box {
+                display: flex;
+                align-items: center;
+                margin-top: 27px;
+                background-color: rgba(255, 255, 255, 0.85);
+                margin-left: -3px;
+                .search__icon {
+                    margin-left: 23px;
+                    opacity: 0.2;
+                    font-size: 2.7rem;
+                }
+                input {
+                    background: none;
+                    margin-left: 20px;
+                    outline: none;
+                    border: none;
+                    padding: 20px;
+                    width: 100%;
+                    font-size: 1.15rem;
+                    font-weight: 300;
+                    margin-right: 20px;
+                    
+                    color: #2c2c2c;
+                    display: flex;
+                    justify-content: center;
+                    &::placeholder {
+                        font-size: 1.15rem;
+                        opacity: 0.7;
+                        text-align: center;
+                        margin-left: 80px;
+                    }
+                    &:focus::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+            .search__button {
+                display: flex;
+                margin: auto;
+                outline: none;
+                border: none;
+                margin-top: 30px;
+                font-size: 1.4rem;
+                font-family: 'Times New Roman';
+                padding: 8px 48px;
+                background-color:#f3a2a2;
+                color: white;
+                border-radius: 20px;
+                transition: 200ms ease-in;
+                &:hover {
+                    background-color: white;
+                    color: #f3a2a2;
+                    cursor: pointer;
+                }
+            }
+            p {
+                color: white;
+                margin-top: 25px;
+                font-size: 0.85rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+        .bottom__text {
+            margin-top: 50px;
+        }
+    }
+}
+

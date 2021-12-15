@@ -25,14 +25,9 @@ function Recipes({ pages, recipes, pagination, setPagination }) {
 
     return (
         <div>
-            <div className="pagination">
-                <KeyboardArrowLeftIcon className="pagination__icon" onClick={prevPage} />
-                <p>{currentPage} of {totalPageNumber}</p>
-                <KeyboardArrowRightIcon className="pagination__icon" onClick={nextPage} />
-            </div>
             <div className="recipes">
                 {recipes?.map((recipe) =>
-                    <Recipe recipe={recipe}/>
+                    <Recipe key={recipe.label} recipe={recipe}/>
                 )}
             </div>
             <div className="pagination">

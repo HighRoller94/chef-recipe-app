@@ -19,9 +19,9 @@
 .recipes {
     display: grid;
     justify-content: center;
-    width: 80%;
-    grid-template-columns: 40% 40%;
-    grid-column-gap: 50px;
-    grid-row-gap: 30px;
+    width: calc(64%);
+    grid-template-columns: repeat(auto-fit, minmax(263px, 225px));
+    grid-column-gap: 55px;
+    grid-row-gap: 55px;
     margin: auto;
 }
