@@ -2,6 +2,7 @@ import React from 'react'
 
 import HeroContent from '../components/Home/HeroContent';
 import Blog from '../components/Home/Blog';
+import Newsletter from '../components/Home/Newsletter';
 
 function Home() {
     return (
@@ -17,6 +18,7 @@ function Home() {
             <div className="border">
                 <span className="bar"></span><p>one of us</p><span className="bar"></span>
             </div>
+            <Newsletter />
         </div>
     )
 }
