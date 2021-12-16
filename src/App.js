@@ -5,6 +5,7 @@ import Search from './components/Search';
 import Results from './pages/Results';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 import ScrollToTop from './ScrollToTop';
 
@@ -19,11 +20,13 @@ function App() {
         <Route path='/search/:id'>
             <Navbar />
             <Results />
+            <Footer />
           </Route>
           <Route path='/'>
             <Navbar />
             <Search />
             <Home />
+            <Footer />
           </Route>
         </Switch>
       </Router>
