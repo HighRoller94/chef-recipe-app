@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Aos from 'aos';
+
+import "aos/dist/aos.css"
 
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 
 function Recipe({ recipe }) {
-
+    
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, []);
+    
     return (
-        <div className="recipe">
+        <div data-aos="fade-up" className="recipe">
             <div className="recipe__image">
                 <img src={recipe.recipe.image} alt="" />
             </div>
