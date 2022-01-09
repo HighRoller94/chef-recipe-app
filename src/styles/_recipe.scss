@@ -2,35 +2,36 @@
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    
     min-height: 38vh;
-    opacity: 0.85;
     .recipe__image {
         width: 100%;
+        overflow: hidden;
+        height: 30vh;
         img {
+            height: 100%;
             width: 100%;
-            height: 98%;
             object-fit: cover;
-            image-rendering: auto;
-            image-rendering: crisp-edges;
-            image-resolution: 300dpi;
+            transition: 200ms ease-in;
         }
     }
     .recipe__info {
         display: flex;
+        position: relative;
         flex-direction: column;
         margin-left: 11px;
         padding: 1px;
+        height: 12vh;
         .recipe__header {
             display: flex;
             flex-direction: column;
             p {
-                margin-top: 1px;
+                margin-top: 5px;
                 font-size: 1rem;
                 font-weight: 200;
                 color: $chefPink;
             }
             h1 {
+                width: 97%;
                 margin-top: 2px;
                 font-size: 1.3rem;
                 font-weight: 200;
@@ -42,15 +43,18 @@
         }
         .recipe__icons {
             display: flex;
-            margin-top: auto;
-            padding-bottom: 5px;
-            margin-top: 10px;
+            margin-top: 20px;
             .fav__icon {
                 color: $chefLightPink;
+                font-size: 1.7rem;
                 margin-left: -2px;
-                margin-top: 3px;
+                position: absolute;
+                bottom: 10px;
             }
             .recipe__counter {
+                position: absolute;
+                bottom: 7px;
+                right: 5px;
                 display: flex;
                 justify-content: bottom;
                 margin-left: auto;
@@ -70,5 +74,9 @@
     &:hover {
         opacity: 1;
         cursor: pointer;
+        .recipe__image > img {
+            transform: scale(1.1);
+        }
     }
+
 }
