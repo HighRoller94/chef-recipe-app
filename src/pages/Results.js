@@ -3,9 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import SearchIcon from '@material-ui/icons/Search';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import Recipes from '../components/Recipes';
 import Pagination from '../components/Pagination';
+
+import arrow from '../assets/arrow.svg'
 
 import '../styles/styles.scss'
 
@@ -34,7 +38,12 @@ function Results() {
         setRecipes(data.hits)
         setPrev(data)
         setPages(data.count)
-        setNext(data._links.next.href)
+        setNext(data?._links.next.href)
+    }
+
+    const getSearch = e => {
+        setQuery(search);
+        history.push(`/search/${search}`)
     }
 
     return (
@@ -44,18 +53,41 @@ function Results() {
                     <div className="float__bar"></div>
                     <div className="search__title">
                         <h1>Search results for "{id}"</h1>
-                        <p>{pages} matching results</p>
+                        {recipes == 0 ? (
+                            <p>Searching...</p>
+                        ) : (
+                            <p>{pages} matching results</p>
+                        )}
                     </div>
+                </div>
+                <div className="search">
+                    <form onSubmit={getSearch}>
+                        <div className="form">
+                            <div className="search__box">
+                                <SearchIcon className="search__icon" />
+                                <input type="text" spellCheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for your next meal..." />
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div className="filter">
                     <p>Filter</p>
                     <KeyboardArrowDownIcon className="filter__icon" />
                 </div>
             </div>
+            <img className="arrow" src={arrow}  alt="" />
             <div className="border">
                 <span className="bar"></span><p>just in time</p><span className="bar"></span>
             </div>
-            <Recipes pages={pages} recipes={recipes} pagination={pagination} setPagination={setPagination} />
+            {recipes == 0 ? (
+                <div className="loading__recipes">
+                    <h1>Cooking up a storm...</h1>
+                    <CircularProgress color="secondary" />
+                </div>
+            ) : (
+                <Recipes pages={pages} recipes={recipes} pagination={pagination} setPagination={setPagination} />
+            )}
+            
             <div className="border">
                 <span className="bar"></span><p>just in time</p><span className="bar"></span>
             </div>
