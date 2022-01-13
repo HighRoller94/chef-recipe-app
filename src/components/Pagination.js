@@ -34,9 +34,9 @@ function Pagination({ recipes, setRecipes, next, setNext, pages, prev, setPrev }
 
     return (
         <div className="pagination">
-            <KeyboardArrowLeftIcon onClick={getPreviousRecipes} />
+            <KeyboardArrowLeftIcon onClick={getPreviousRecipes} className="pagination__icon"/>
             <p>{currentPage} of {totalPageNumber}</p>
-            <KeyboardArrowRightIcon onClick={getMoreRecipes} />
+            <KeyboardArrowRightIcon onClick={getMoreRecipes} className="pagination__icon"/>
         </div>
     )
 }

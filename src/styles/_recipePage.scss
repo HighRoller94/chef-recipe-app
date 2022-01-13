@@ -12,17 +12,17 @@
             display: flex;
             .float__bar {
                 background-color: $chefLightPink;
-                height: 105px;
-                width: 12px;
+                height: 120px;
+                width: 13px;
             }
             .recipe__title {
                 display: flex;
                 flex-direction: column;
-                margin-left: 2rem;
+                margin-left: 1.5rem;
                 h1 {
                     font-family: 'Source Serif Pro', serif;
                     font-weight: 600;
-                    font-size: 4.5rem;
+                    font-size: 5rem;
                     color: $dark;
                     margin-top: -7px;
                 }
@@ -33,6 +33,7 @@
                         color: $chefLightPink;
                         font-size: 1.2rem;
                         margin-left: 3px;
+                        margin-top: 7px;
                         .dot {
                             color: $dark;
                             margin: 0 10px;
@@ -63,7 +64,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 40px;
+            margin-top: 50px;
             span {
                 width: 43%;
                 display: flex;
@@ -73,17 +74,17 @@
             }
             p {
                 color: $chefPink;
-                font-size: 1.05rem;
+
                 min-width: 125px;
                 margin: 0 30px;
-                font-family: 'Source Serif Pro';
+                font-family: 'Segoe Script';
             }
         }
         .recipe__grid {
             display: grid;
             grid-template-columns: 1.2fr .9fr 1.05fr;
             grid-column-gap: 40px;
-            margin-top: 35px;
+            margin-top: 75px;
             margin-bottom: 35px;
             .recipe__firstCol {
                 .recipe__image {
@@ -100,7 +101,8 @@
                     background-color: white;
                     margin-top: 40px;
                     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-                    padding: 30px;
+                    padding: 30px 35px;
+                    
                     h3 {
                         color: $chefLightPink;
                         font-weight: 400;
@@ -152,26 +154,99 @@
                     }
                 }
             }
+            .recipe__secondCol {
+                display: flex;
+                flex-direction: column;
+                padding: 0 10px;
+                h3 {
+                    color: $chefLightPink;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                }
+                li {
+                    font-size: 1rem;
+                    margin-top: 5px;
+                }
+            }
             .recipe__thirdCol {
                 background-color: rgb(136,136,136, 0.8);
                 padding: 15px;
                     .recipe__info {
+                        position: relative;
                         display: flex;
                         flex-direction: column;
                         border: 1px solid $chefLightPink;
-                        height: 100%;
-                        width: 100%;
-                        .info__header {
-                            padding: 15px 20px;
+                        height: 95%;
+                        width: 85%;
+                        padding: 10px 25px;
+                        text-transform: capitalize;
+                        .recipe__cardIcon {
+                            position: absolute;
+                            color: #fcfcfc;
+                            top: 0;
+                            right: 0;
+                            padding: 20px;
+                            font-size: 4rem;
+                        }
+                        h2 {
+                            color: $chefLightPink;
+                            font-weight: 400;
+                            font-size: 1.5rem;
+                            margin-top: 10px;
+                        }
+                        p {
+                            font-size: 1.1rem;
+                            margin-top: 5px;
+                            color: #fcfcfc;
+                        }
+                        a {
+                            margin: 7px 0;
+                            color: #ffb0b0;
+                            line-height: 1;
+                        }
+                        .info__icon {
+                            font-size: 1.75rem;
+                            margin-right: 10px;
+                        }
+                        .url {
+                            display: flex;
+                            align-items: center;
+                            color: #fcfcfc;
+                        }
+                        .mealType {
+                            display: flex;
+                            align-items: center;
+                            color: #fcfcfc;
+                        }
+                        .dishType {
+                            display: flex;
+                            align-items: center;
+                            color: #fcfcfc;
+                        }
+                        .totalTime {
+                            display: flex;
+                            align-items: center;
+                            color: #fcfcfc;
+                        }
+                        .totalCal {
+                            display: flex;
+                            align-items: center;
+                            color: #fcfcfc;
+                        }
+                        .cuisineType {
+                            display: flex;
+                            align-items: center;
+                            color: #fcfcfc;
                         }
                     }
             }
         }
         .extra__recipes {
-            margin-top: 45px;
+            margin-top: 80px;
             padding-bottom: 300px;
             h2 {
-                font-family: 'Source Serif Pro';
+                font-family: 'Source Serif Pro', serif;
                 font-size: 2rem;
             }
         }

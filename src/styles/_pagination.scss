@@ -1,0 +1,13 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 85px auto;
+    .pagination__icon {
+        cursor: pointer;
+    }
+    p {
+        font-size: 1.2rem;
+        margin: 0 10px;
+    }
+}

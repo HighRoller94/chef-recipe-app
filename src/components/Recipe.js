@@ -18,7 +18,7 @@ function Recipe({ recipe }) {
         <Link to={{
             pathname: `/${recipe.recipe.label}`,
             state: {
-                recipe: recipe
+                recipe: recipe.recipe
             }
             }}
             >

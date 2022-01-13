@@ -5,7 +5,7 @@ function Footer() {
         <div className="footer">
             <div className="footer__container">
                 <div className="footer__logo">
-                    <h2>Chef</h2>
+                    <h2>chef</h2>
                     <p>Connect with us</p>
                     <div className="footer__icons">
                         {/* Facebook Icon */}

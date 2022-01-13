@@ -60,26 +60,6 @@
                         opacity: 1;
                     }
                 }
-                .nav__signup {
-                    background-color: $chefLightPink;
-                    color: white;
-                    font-weight: 600;
-                    padding: 3px 21px;
-                    border-radius: 15px;
-                    border: none;
-                    font-size: 0.95rem;
-                    outline: none;
-                    margin-left: 15px;
-                    transition: 250ms ease-in;
-                    border: 2px solid transparent;
-                    opacity: 0.8;
-                    &:hover {
-                        background:none;
-                        color: $chefLightPink;
-                        cursor: pointer;
-                        border: 2px solid $chefLightPink;
-                    }
-                }
             }
             .nav__icons {
                 display: flex;
@@ -89,7 +69,9 @@
                 margin-left: 20px;
                 opacity: .5;
                 .nav__icon {
-                    margin: 0 10px;
+                    margin: 0 8px;
+                    width: 30px;
+                    height: 30px;
                     &:hover {
                         cursor: pointer;
                         opacity: 1;
