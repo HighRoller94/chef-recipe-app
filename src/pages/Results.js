@@ -38,7 +38,7 @@ function Results() {
         setRecipes(data.hits)
         setPrev(data)
         setPages(data.count)
-        setNext(data?._links.next.href)
+        setNext(data?._links?.next?.href)
     }
 
     const getSearch = e => {
@@ -66,6 +66,7 @@ function Results() {
                             <div className="search__box">
                                 <SearchIcon className="search__icon" />
                                 <input type="text" spellCheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for your next meal..." />
+                                <button type="submit" disabled={!search}></button>
                             </div>
                         </div>
                     </form>
@@ -81,7 +82,6 @@ function Results() {
             </div>
             {recipes == 0 ? (
                 <div className="loading__recipes">
-                    <h1>Cooking up a storm...</h1>
                     <CircularProgress color="secondary" />
                 </div>
             ) : (

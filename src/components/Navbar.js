@@ -10,6 +10,7 @@ function Navbar() {
     const history = useHistory();
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('')
+    const [disabled, setDisabled] = useState()
 
     const getSearch = e => {
         setQuery(search);
@@ -34,7 +35,7 @@ function Navbar() {
     useEffect(() => {
         window.addEventListener("scroll", scrollNav);
         return () => window.removeEventListener("scroll", scrollNav);
-    }, [])
+    }, [search])
 
     return (
         <div className={`nav ${show && 'nav__min'}`}>
@@ -42,13 +43,14 @@ function Navbar() {
                 <div className="nav__left">
                     <RestaurantIcon className="logo" />
                     <Link to="/">
-                        <h2 onClick={scrollToTop} className="nav__logo">Chef</h2>
+                        <h2 onClick={scrollToTop} className="nav__logo">chef</h2>
                     </Link>
                     {show ? (
                     <form onSubmit={getSearch}>
                         <div className="nav__search">
                             <SearchIcon className="navSearch__icon" />
-                            <input type="text" spellcheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search..." />
+                            <input required type="text" spellcheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search..." />
+                            <button type="submit" disabled={!search}></button>
                         </div>
                     </form>
                     ) : (
@@ -56,7 +58,6 @@ function Navbar() {
                     )}
                 </div>
                 <div className="nav__right">
-                    <p>Follow us on </p>
                     <div className="nav__icons">
                         {/* Facebook Icon */}
                         <svg className="nav__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 27.329 27.164">

@@ -22,9 +22,9 @@ function Search() {
                             <div className="form">
                                 <div className="search__box">
                                     <SearchIcon className="search__icon" />
-                                    <input type="text" spellcheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for your next meal..." />
+                                    <input type="text" spellCheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for your next meal..." />
                                 </div>
-                                <button type="submit" className="search__button">Search</button>
+                                <button type="submit" disabled={!search} className="search__button">Search</button>
                                 <p>Advanced search</p>
                             </div>
                         </form>

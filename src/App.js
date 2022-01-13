@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Search from './components/Search';
 import Results from './pages/Results';
 import Home from './pages/Home';
+import Recipe from './pages/Recipe'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -17,9 +18,14 @@ function App() {
       <Router>
         <ScrollToTop />
         <Switch>
-        <Route path='/search/:id'>
+          <Route path='/search/:id'>
             <Navbar />
             <Results />
+            <Footer />
+          </Route>
+          <Route path='/:label'>
+            <Navbar />
+            <Recipe />
             <Footer />
           </Route>
           <Route path='/'>
