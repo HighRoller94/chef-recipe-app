@@ -1,71 +1,180 @@
 .footer {
     width: 100%;
-    display: flex;
     background-color: $dark;
     .footer__container {
-        padding-top: 75px;
-        padding-bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 77%;
+        padding: 3.5rem 0 4rem 0;
         margin: 0 auto;
-        display: grid;
-        width: 63%;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-column-gap: 65px;
-        .footer__logo {
-            margin-left: 5px;
-            color: white;
-            h2 {
-                font-family: 'Calistoga';
-                font-size: 3.5rem;
-                font-weight: 300;
-                margin-bottom: 10px;
+        .container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 6rem;
+            grid-row-gap: 2rem;
+            justify-content: center;
+            padding-bottom: 5rem;
+            .footer__logo {
+                color: white;
+                h2 {
+                    font-family: 'Calistoga', serif;
+                    font-size: 3.4rem;
+                    font-weight: 100;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                p {
+                    margin-top: 1rem;
+                    font-size: 1.05rem;
+                }
+                .footer__icons {
+                    margin-top: .8rem;
+                    display: flex;
+                    justify-content: space-between;
+                    .footer__icon {
+                        width: 2rem;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
-            p {
-                margin-top: -5px;
-                font-size: 1.2rem;
+            .footer__links {
+                margin-top: .5rem;
+                color: white;
+                h2 {
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: .95rem;
+                    font-weight: 300;
+                    margin-bottom: .5rem;
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                
             }
-            .footer__icons {
-                margin-top: 30px;
-                display: flex;
-                .footer__icon {
-                    margin-right: 25px;
+            .footer__media {
+                color: white;
+                h2 {
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: .95rem;
+                    font-weight: 300;
+                    margin-bottom: .5rem;
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                }
+                }
+            }
+            .footer__legal {
+                color: white;
+                h2 {
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: .95rem;
+                    font-weight: 300;
+                    margin-bottom: .5rem;
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                }
                 }
             }
         }
-        .footer__links {
-            margin-top: 17px;
-            color: white;
-            h2 {
-                margin-bottom: 20px;
-                font-weight: 500;
+        .footer__copyright {
+            display: flex;
+            align-items: center;
+            .copyright {
+                font-weight: 300;
+                font-size: .8rem;
+                color: white;
             }
-            p {
-                font-size: 0.9rem;
-                margin-bottom: 8px;
-            }
-        }
-        .footer__media {
-            margin-top: 17px;
-            color: white;
-            h2 {
-                margin-bottom: 20px;
-                font-weight: 500;
-            }
-            p {
-                font-size: 0.9rem;
-                margin-bottom: 8px;
+            .icon {
+                color: white;
+                margin-top: -2px;
+                margin-left: 1rem;
             }
         }
-        .footer__legal {
-            margin-top: 17px;
-            color: white;
-            h2 {
-                margin-bottom: 20px;
-                font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        .footer__container {
+            width: 85%;
+            .container {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                column-gap: 0;
+                .footer__logo {
+                    h2 {
+                        font-size: 3.25rem;
+                    }
+                    p {
+                        font-size: .9rem;
+                    }
+                    .footer__icons {
+                        margin-top: 1rem;
+                        width: 100%;
+                        .footer_icon {
+                            width: 1.8rem;
+                        }
+                    }
+                }
+                .footer__links {
+                    margin-top: 0;
+                    h2 {
+                        font-size: 1.2rem;
+                        
+                    }
+                }
+                .footer__media {
+                    margin-left: 1rem;
+                    }
+                    p {
+                        font-size: .8rem;
+                    }
+                }
+                .footer__legal {
+                    p {
+                        font-size: .8rem;
+                    }
+                }
+        }
+    }
+}
+
+@media screen and (min-width: 1312px) {
+    .footer {
+        .footer__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            padding: 4rem 0 5rem 0;
+            .container {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 6rem;
             }
-            p {
-                font-size: 0.9rem;
-                margin-bottom: 8px;
-            }
+
         }
     }
 }
