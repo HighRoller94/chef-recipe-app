@@ -45,17 +45,6 @@ function Navbar() {
                     <Link to="/">
                         <h2 onClick={scrollToTop} className="nav__logo">chef</h2>
                     </Link>
-                    {show ? (
-                    <form onSubmit={getSearch}>
-                        <div className="nav__search">
-                            <SearchIcon className="navSearch__icon" />
-                            <input required type="text" spellcheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search..." />
-                            <button type="submit" disabled={!search}></button>
-                        </div>
-                    </form>
-                    ) : (
-                        null
-                    )}
                 </div>
                 <div className="nav__right">
                     <div className="nav__icons">

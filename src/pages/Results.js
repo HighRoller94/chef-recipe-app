@@ -77,9 +77,6 @@ function Results() {
                 </div>
             </div>
             <img className="arrow" src={arrow}  alt="" />
-            <div className="border">
-                <span className="bar"></span><p>just in time</p><span className="bar"></span>
-            </div>
             {recipes == 0 ? (
                 <div className="loading__recipes">
                     <CircularProgress color="secondary" />
@@ -87,10 +84,6 @@ function Results() {
             ) : (
                 <Recipes pages={pages} recipes={recipes} pagination={pagination} setPagination={setPagination} />
             )}
-            
-            <div className="border">
-                <span className="bar"></span><p>just in time</p><span className="bar"></span>
-            </div>
             <Pagination next={next} setNext={setNext} prev={prev} setPrev={setPrev} setRecipes={setRecipes} pages={pages} />
         </div>
     )

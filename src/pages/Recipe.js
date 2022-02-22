@@ -44,9 +44,7 @@ function Recipe() {
                         <p>{recipe.recipe.yield}</p>
                     </div>
                 </div>
-                <div className="border">
-                    <span className="bar"></span><p>treat yourself</p><span className="bar"></span>
-                </div>
+
                 <div className="recipe__grid">
                     <div className="recipe__firstCol">
                         <div className="recipe__image">
@@ -132,9 +130,6 @@ function Recipe() {
                                 </div>
                             </div>
                     </div>
-                </div>
-                <div className="border">
-                    <span className="bar"></span><p>treat yourself</p><span className="bar"></span>
                 </div>
                 <div className="extra__recipes">
                     <h2>Not to your taste? Check out some more recipes!</h2>
