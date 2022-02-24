@@ -4,10 +4,20 @@ import { useHistory } from 'react-router-dom'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 
-function Pagination({ recipes, setRecipes, next, setNext, pages, prev, setPrev }) {
-    const history = useHistory()
-    const totalPageNumber = Math.ceil(pages/20);
-    const [currentPage, setCurrentPage] = useState(1);
+function Pagination({ pageLink, setPageLink, currentPage, setCurrentPage, pagination, setPagination, totalPages }) {
+    const totalPageNumber = Math.ceil(totalPages/20);
+
+    useEffect(() => {
+        const pageLinks = document.querySelectorAll(".pages p");
+        pageLinks.forEach(link => {
+            let linkDiv = link.parentElement
+            linkDiv.classList.remove('active')
+            if (link.innerHTML == currentPage) {
+                let linkDiv = link.parentElement
+                linkDiv.classList.toggle('active')
+            }
+        })
+    })
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -17,26 +27,64 @@ function Pagination({ recipes, setRecipes, next, setNext, pages, prev, setPrev }
     }
 
     const getMoreRecipes = async () => {
-        const response = await fetch(`${next}`)
-        const data = await response.json();
-        console.log(data)
-        setRecipes(data.hits)
-        setCurrentPage(currentPage + 1)
-        setNext(data._links.next.href)
+        setPagination(pagination+20)
+        setCurrentPage(currentPage+1)
+        setPageLink(currentPage+1)
         scrollToTop();
     }
 
     const getPreviousRecipes = async () => {
-        setRecipes(prev.hits)
-        setCurrentPage(currentPage - 1)
-        scrollToTop();
+        if (pagination===0) {
+            return;
+        } else {
+            setPagination(pagination-20)
+            if (currentPage === 1) {
+                return;
+            } else {
+                setCurrentPage(currentPage-1)
+            }
+        }
     }
 
     return (
         <div className="pagination">
-            <KeyboardArrowLeftIcon onClick={getPreviousRecipes} className="pagination__icon"/>
-            <p>{currentPage} of {totalPageNumber}</p>
-            <KeyboardArrowRightIcon onClick={getMoreRecipes} className="pagination__icon"/>
+            {currentPage === 1 ? (
+                <div className="pages__container">
+                    <KeyboardArrowLeftIcon onClick={getPreviousRecipes} className="pagination__backIcon"/>
+                    <div className="pages">
+                        <p className="pages__link">{currentPage}</p>
+                    </div>
+                    <div className="pages" onClick={getMoreRecipes}>
+                        <p className="pages__link">{currentPage+1}</p>
+                    </div>
+                    <div className="pages">
+                        <p className="pages__link">{currentPage+2}</p>
+                    </div>
+                    <p className="pages__ellipses">...</p>
+                    <div className="pages">
+                        <p className="pages__link">{currentPage+4}</p>
+                    </div>
+                    <KeyboardArrowRightIcon onClick={getMoreRecipes} className="pagination__forwardIcon"/>
+                </div>
+            ) : (
+                <div className="pages__container">
+                    <KeyboardArrowLeftIcon onClick={getPreviousRecipes} className="pagination__backIcon"/>
+                    <div className="pages" onClick={getPreviousRecipes}>
+                        <p className="pages__link">{currentPage-1}</p>
+                    </div>
+                    <div className="pages">
+                        <p className="pages__link">{currentPage}</p>
+                    </div>
+                    <div className="pages" onClick={getMoreRecipes}>
+                        <p className="pages__link">{currentPage+1}</p>
+                    </div>
+                    <p>...</p>
+                    <div className="pages">
+                        <p className="pages__link">{currentPage+4}</p>
+                    </div>
+                    <KeyboardArrowRightIcon onClick={getMoreRecipes} className="pagination__forwardIcon"/>
+                </div>
+            )}          
         </div>
     )
 }
