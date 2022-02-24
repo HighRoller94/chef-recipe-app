@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import SearchIcon from '@material-ui/icons/Search';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -19,26 +20,40 @@ function Results() {
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
     const { id } = useParams();
-    const [pagination, setPagination] = useState(0);
-    const [pages, setPages] = useState();
-    const [next, setNext] = useState();
-    const [prev, setPrev] = useState();
+    const [totalPages, setTotalPages] = useState();
 
+    const [pagination, setPagination] = useState(0);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pageLink, setPageLink] = useState(currentPage);
     const APP_ID = "8ba5b485";
     const APP_KEY = "b4e695ac6bd457749d819e171da3500e";
 
     useEffect(() => {
         getRecipes();
-    }, [id, pagination]);
+
+        const scrollTopIcon = document.querySelector('.scroll__top');
+        const scrollTop = () => {
+            scrollTopIcon.classList.toggle('active', window.scrollY > 800);
+        }
+        window.addEventListener('scroll', scrollTop);
+    }, [id, pagination, currentPage]);
+
 
     const getRecipes = async () => {
-        const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${id}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+        const response = await fetch(`https://api.edamam.com/search?q=${id}&app_id=${APP_ID}&app_key=${APP_KEY}&from=${pagination}&to=${pagination+20}`);
         const data = await response.json();
-        console.log(data)
         setRecipes(data.hits)
-        setPrev(data)
-        setPages(data.count)
-        setNext(data?._links?.next?.href)
+        setCurrentPage(currentPage)
+        setPageLink(currentPage)
+        setTotalPages(data.count)
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behaviour: 'smooth'
+        });
     }
 
     const getSearch = e => {
@@ -48,6 +63,9 @@ function Results() {
 
     return (
         <div className="results__page">
+            <div className="scroll__top" onClick={scrollToTop} >
+                <KeyboardArrowUpIcon className="icon" />
+            </div>
             <div className="search__header">
                 <div className="search__container">
                     <div className="float__bar"></div>
@@ -56,7 +74,7 @@ function Results() {
                         {recipes == 0 ? (
                             <p>Searching...</p>
                         ) : (
-                            <p>{pages} matching results</p>
+                            <p>{totalPages} matching results</p>
                         )}
                     </div>
                 </div>
@@ -77,14 +95,21 @@ function Results() {
                 </div>
             </div>
             <img className="arrow" src={arrow}  alt="" />
+            <div className="border">
+                <span className="bar"></span><p>just in time</p><span className="bar"></span>
+            </div>
             {recipes == 0 ? (
                 <div className="loading__recipes">
                     <CircularProgress color="secondary" />
                 </div>
             ) : (
-                <Recipes pages={pages} recipes={recipes} pagination={pagination} setPagination={setPagination} />
+                <Recipes recipes={recipes} />
             )}
-            <Pagination next={next} setNext={setNext} prev={prev} setPrev={setPrev} setRecipes={setRecipes} pages={pages} />
+            
+            <div className="border">
+                <span className="bar"></span><p>just in time</p><span className="bar"></span>
+            </div>
+            <Pagination pageLink={pageLink} setPageLink={setPageLink} currentPage={currentPage} setCurrentPage={setCurrentPage} setRecipes={setRecipes} totalPages={totalPages} pagination={pagination} setPagination={setPagination} />
         </div>
     )
 }
