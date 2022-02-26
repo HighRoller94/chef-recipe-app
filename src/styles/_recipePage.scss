@@ -1,39 +1,37 @@
 .recipe__page {
     background-color: #fcfcfc;
-    padding-top: 150px;
+    padding-top: 6rem;
     .recipe__container {
-        padding-top: 20px;
-        min-width: 1000px;
-        width: 64%;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         .recipe__header {
             display: flex;
-            .float__bar {
-                background-color: $chefLightPink;
-                height: 120px;
-                width: 13px;
-            }
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .recipe__title {
                 display: flex;
                 flex-direction: column;
-                margin-left: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1rem;
+                width: 90%;
                 h1 {
                     font-family: 'Source Serif Pro', serif;
-                    font-weight: 600;
-                    font-size: 5rem;
+                    font-weight: 300;
+                    font-size: 3rem;
                     color: $dark;
-                    margin-top: -7px;
                 }
                 .recipe__label {
                     display: flex;
-                    margin-top: -3px;
                     p {
                         color: $chefLightPink;
-                        font-size: 1.2rem;
-                        margin-left: 3px;
-                        margin-top: 7px;
+                        font-size: 1rem;
+                        margin-top: .5rem;
                         .dot {
                             color: $dark;
                             margin: 0 10px;
@@ -41,106 +39,70 @@
                         }
                     }
                 }
-            }
-            .recipe__counter {
-                display: flex;
-                margin-left: auto;
-                align-items: center;
-                margin-top: -1.5rem;
-                .yield__icon {
-                    font-size: 2rem;
-                    color: $dark;
-                }
-                p {
-                    color: $chefPink;
-                    font-size: 2rem;
-                    margin-left: 8px;
+                .recipe__time {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 1rem;
+                    .icon {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        margin-left: .5rem;
+                        font-size: 1.25rem;
+                    }
                 }
             }
-        }
-        .border {
-            width: 100%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 50px;
-            span {
-                width: 43%;
-                display: flex;
-                background-color: $dark;
-                height: 2px;
-                border-radius: 50%;
+            .recipe__fav {
+                margin-top: 1rem;
+                .icon {
+                    color: $chefLightPink;
+                    font-size: 2.75rem;
+                }
             }
-            p {
-                color: $chefPink;
-
-                min-width: 125px;
-                margin: 0 30px;
-                font-family: 'Segoe Script';
+            .recipe__counter { 
+                display: none;
             }
         }
         .recipe__grid {
-            display: grid;
-            grid-template-columns: 1.2fr .9fr 1.05fr;
-            grid-column-gap: 40px;
-            margin-top: 75px;
-            margin-bottom: 35px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-bottom: 4rem;
             .recipe__firstCol {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
                 .recipe__image {
-                    height: 43vh;
-                    overflow: hidden;
-                    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+                    margin-top: 2rem;
+                    width: 100%;
                     img {
                         object-fit: cover;
-                        height: 100%;
                         width: 100%;
+                        height: 100%;
                     }
                 }
                 .recipe__nutritional {
                     background-color: white;
-                    margin-top: 40px;
+                    margin-top: 2.5rem;
+                    width: 82%;
                     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-                    padding: 30px 35px;
-                    
-                    h3 {
-                        color: $chefLightPink;
-                        font-weight: 400;
-                    }
-                    p {
-                        margin-left: auto;
-                        font-size: 1.05rem;
-                    }
-                    .recipe__cals {
+                    padding: 1rem;
+                    .recipe__nutrients {
                         display: flex;
                         align-items: center;
-                        margin-bottom: 12px;
-                        h3 {
-                            font-size: 1.2rem;
-                        }
-                    }
-                    .recipe__fat {
-                        display: flex;
-                        align-items: center;
-                        margin-top: 7px;
+                        margin-bottom: .5rem;
                         h3 {
                             font-size: 1.1rem;
+                            color: $chefLightPink;
+                            font-weight: 400;
                         }
-                    }
-                    .recipe__protein {
-                        display: flex;
-                        align-items: center;
-                        margin-top: 7px;
-                        h3 {
-                            font-size: 1.1rem;
-                        }
-                    }
-                    .recipe__carbs {
-                        display: flex;
-                        align-items: center;
-                        margin-top: 7px;
-                        h3 {
-                            font-size: 1.1rem;
+                        p {
+                            margin-left: auto;
+                            font-size: 1rem;
+                            color: $dark;
                         }
                     }
                     .recipe__sugars {
@@ -150,6 +112,12 @@
                         h3 {
                             font-size: 1rem;
                             margin-left: 5em;
+                            color: $chefLightPink;
+                            font-weight: 400;
+                        }
+                        p {
+                            margin-left: auto;
+                            color: $dark;
                         }
                     }
                 }
@@ -157,21 +125,56 @@
             .recipe__secondCol {
                 display: flex;
                 flex-direction: column;
-                padding: 0 10px;
-                h3 {
-                    color: $chefLightPink;
-                    font-weight: 300;
-                    font-size: 1.5rem;
-                    margin-bottom: 20px;
+                width: 88%;
+                margin: 2rem auto;
+                .ingredients__border {
+                    width: 100%;
+                    display: flex;
+                    padding: 1.75rem 0;
+                    span {
+                        height: 1px;
+                        background-color: $dark;
+                        width: 100%;
+                        opacity: 0.5;
+                    }
                 }
-                li {
-                    font-size: 1rem;
-                    margin-top: 5px;
+                .recipe__ingredients {
+                    list-style: none;
+                    padding: 0;
+                    .recipe__counter {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 1.5rem;
+                        color: $chefPink;
+                        h3 {
+                            color: $dark;
+                            font-weight: 300;
+                            font-size: 1.7rem;
+                        }
+                        .yield__icon {
+                            font-size: 1.5rem;
+                            margin-left: 2rem;
+                            margin-top: -.1rem;
+                        }
+                        p {
+                            margin-left: .25rem;
+                            font-size: 1.5rem;
+                            margin-top: -.1rem;
+                            color: $dark;
+                        }
+                    }
+                    li {
+                        font-weight: 300;
+                        font-size: .9rem;
+                        margin: .6rem 0;
+                    }
                 }
             }
             .recipe__thirdCol {
-
-                padding: 15px;
+                margin: 0 auto;
+                background-color: grey;
+                width: 82%;
+                padding: 1rem;
                     .recipe__info {
                         position: relative;
                         display: flex;
@@ -179,30 +182,27 @@
                         border: 1px solid $chefLightPink;
                         height: 95%;
                         width: 85%;
-                        padding: 10px 25px;
+                        padding: 1rem 1.75rem;
+                        padding-bottom: 2em;
                         text-transform: capitalize;
                         .recipe__cardIcon {
-                            position: absolute;
-                            color: #fcfcfc;
-                            top: 0;
-                            right: 0;
-                            padding: 20px;
-                            font-size: 4rem;
+                            display: none;
                         }
                         h2 {
                             color: $chefLightPink;
                             font-weight: 400;
-                            font-size: 1.5rem;
+                            font-size: 1.25rem;
                             margin-top: 10px;
                         }
                         p {
-                            font-size: 1.1rem;
+                            font-size: .95rem;
                             margin-top: 5px;
                             color: #fcfcfc;
                         }
                         a {
                             margin: 7px 0;
                             color: #ffb0b0;
+                            font-size: .95rem;
                             line-height: 1;
                         }
                         .info__icon {
@@ -242,12 +242,284 @@
                     }
             }
         }
-        .extra__recipes {
-            margin-top: 80px;
-            padding-bottom: 300px;
-            h2 {
-                font-family: 'Source Serif Pro', serif;
-                font-size: 2rem;
+        .border {
+            width: 89%;
+            display: flex;
+            padding-bottom: 7rem;
+            span {
+                height: 1px;
+                background-color: $dark;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1312px) {
+    .recipe__page {
+        padding-top: 150px;
+        .recipe__container {
+            padding-top: 20px;
+            min-width: 1000px;
+            width: 64%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            .recipe__header {
+                display: flex;
+                .float__bar {
+                    background-color: $chefLightPink;
+                    height: 120px;
+                    width: 13px;
+                }
+                .recipe__title {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 1.5rem;
+                    h1 {
+                        font-size: 5rem;
+                        margin-top: -7px;
+                    }
+                    .recipe__label {
+                        display: flex;
+                        margin-top: -3px;
+                        p {
+                            color: $chefLightPink;
+                            font-size: 1.2rem;
+                            margin-left: 3px;
+                            margin-top: 7px;
+                            .dot {
+                                color: $dark;
+                                margin: 0 10px;
+                                font-size: .7rem;
+                            }
+                        }
+                    }
+                }
+                .recipe__counter {
+                    display: flex;
+                    margin-left: auto;
+                    align-items: center;
+                    margin-top: -1.5rem;
+                    .yield__icon {
+                        font-size: 2rem;
+                        color: $dark;
+                    }
+                    p {
+                        color: $chefPink;
+                        font-size: 2rem;
+                        margin-left: 8px;
+                    }
+                }
+            }
+            .border:nth-child(2) {
+                width: 100%;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 50px;
+                span {
+                    width: 43%;
+                    display: flex;
+                    background-color: $dark;
+                    height: 2px;
+                    border-radius: 50%;
+                }
+                p {
+                    color: $chefPink;
+                    min-width: 125px;
+                    margin: 0 30px;
+                    font-family: 'Segoe Script';
+                }
+            }
+            .recipe__grid {
+                display: grid;
+                grid-template-columns: 1.2fr .9fr 1.05fr;
+                grid-column-gap: 40px;
+                margin-top: 75px;
+                margin-bottom: 35px;
+                .recipe__firstCol {
+                    .recipe__image {
+                        height: 43vh;
+                        overflow: hidden;
+                        box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+                        img {
+                            object-fit: cover;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .recipe__nutritional {
+                        background-color: white;
+                        margin-top: 40px;
+                        box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+                        padding: 30px 35px;
+                        
+                        h3 {
+                            color: $chefLightPink;
+                            font-weight: 400;
+                        }
+                        p {
+                            margin-left: auto;
+                            font-size: 1.05rem;
+                        }
+                        .recipe__cals {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 12px;
+                            h3 {
+                                font-size: 1.2rem;
+                            }
+                        }
+                        .recipe__fat {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 7px;
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+                        }
+                        .recipe__protein {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 7px;
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+                        }
+                        .recipe__carbs {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 7px;
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+                        }
+                        .recipe__sugars {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 5px;
+                            h3 {
+                                font-size: 1rem;
+                                margin-left: 5em;
+                            }
+                        }
+                    }
+                }
+                .recipe__secondCol {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 10px;
+                    h3 {
+                        color: $chefLightPink;
+                        font-weight: 300;
+                        font-size: 1.5rem;
+                        margin-bottom: 20px;
+                    }
+                    li {
+                        font-size: 1rem;
+                        margin-top: 5px;
+                    }
+                }
+                .recipe__thirdCol {
+                    background-color: grey;
+                    padding: 15px;
+                        .recipe__info {
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            border: 1px solid $chefLightPink;
+                            height: 95%;
+                            width: 85%;
+                            padding: 10px 25px;
+                            text-transform: capitalize;
+                            .recipe__cardIcon {
+                                position: absolute;
+                                color: #fcfcfc;
+                                top: 0;
+                                right: 0;
+                                padding: 20px;
+                                font-size: 4rem;
+                            }
+                            h2 {
+                                color: $chefLightPink;
+                                font-weight: 400;
+                                font-size: 1.5rem;
+                                margin-top: 10px;
+                            }
+                            p {
+                                font-size: 1.1rem;
+                                margin-top: 5px;
+                                color: #fcfcfc;
+                            }
+                            a {
+                                margin: 7px 0;
+                                color: #ffb0b0;
+                                line-height: 1;
+                            }
+                            .info__icon {
+                                font-size: 1.75rem;
+                                margin-right: 10px;
+                            }
+                            .url {
+                                display: flex;
+                                align-items: center;
+                                color: #fcfcfc;
+                            }
+                            .mealType {
+                                display: flex;
+                                align-items: center;
+                                color: #fcfcfc;
+                            }
+                            .dishType {
+                                display: flex;
+                                align-items: center;
+                                color: #fcfcfc;
+                            }
+                            .totalTime {
+                                display: flex;
+                                align-items: center;
+                                color: #fcfcfc;
+                            }
+                            .totalCal {
+                                display: flex;
+                                align-items: center;
+                                color: #fcfcfc;
+                            }
+                            .cuisineType {
+                                display: flex;
+                                align-items: center;
+                                color: #fcfcfc;
+                            }
+                        }
+                }
+            }
+            .border:nth-child(4) {
+                width: 100%;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 3.5rem;
+                margin-bottom: 10rem;
+                span {
+                    width: 43%;
+                    display: flex;
+                    background-color: $dark;
+                    height: 2px;
+                    border-radius: 50%;
+                }
+                p {
+                    color: $chefPink;
+                    min-width: 125px;
+                    margin: 0 30px;
+                    font-family: 'Segoe Script';
+                }
             }
         }
     }

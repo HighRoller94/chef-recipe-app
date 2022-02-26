@@ -1,6 +1,9 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import LanguageIcon from '@material-ui/icons/Language';
 import LocalDining from '@material-ui/icons/LocalDining';
@@ -29,41 +32,43 @@ function Recipe() {
                 <div className="recipe__header">
                     <div className="float__bar"></div>
                     <div className="recipe__title">
-                        <h1 className="recipe__name">{recipe.recipe.label}</h1>
+                        <h1 className="recipe__name">{recipe?.recipe.label}</h1>
                         <div className="recipe__label">
-                            <p className="recipe__label">{recipe.recipe?.dietLabels[0]}</p>
+                            <p className="recipe__label">{recipe?.recipe.dietLabels[0]}</p>
                             {recipe.recipe.dietLabels[1] ? (
                                 <p><FiberManualRecordIcon className="dot"/>{recipe.recipe.dietLabels[1]}</p>
                             ) : (
                                 null
                             )}
                         </div>
+                        <div className="recipe__time">
+                            <AccessTime className="icon"/>
+                            <p>{recipe.recipe.totalTime} minutes</p>
+                        </div>
                     </div>
-                    <div className="recipe__counter">
-                        <RestaurantIcon className="yield__icon" />
-                        <p>{recipe.recipe.yield}</p>
+                    <div className="recipe__fav">
+                        <FavoriteIcon className="icon" />
                     </div>
                 </div>
-
                 <div className="recipe__grid">
                     <div className="recipe__firstCol">
                         <div className="recipe__image">
                             <img src={recipe.recipe.image} alt="" />
                         </div>
                         <div className="recipe__nutritional">
-                            <div className="recipe__cals">
+                            <div className="recipe__nutrients">
                                 <h3>Total Calories (per serving)</h3>
                                 <p>{caloriesServing}kcal</p>
                             </div>
-                            <div className="recipe__fat">
+                            <div className="recipe__nutrients">
                                 <h3>Fat</h3>
                                 <p>{fat}g</p>
                             </div>
-                            <div className="recipe__protein">
+                            <div className="recipe__nutrients">
                                 <h3>Protein</h3>
                                 <p>{protein}g</p>
                             </div>
-                            <div className="recipe__carbs">
+                            <div className="recipe__nutrients">
                                 <h3>Carbohydrates</h3>
                                 <p>{carbs}g</p>
                             </div>
@@ -74,12 +79,22 @@ function Recipe() {
                         </div>
                     </div>
                     <div className="recipe__secondCol">
-                        <div className="recipe__ingredients">
-                            <h3>INGREDIENTS</h3>
+                        <div className="ingredients__border">
+                            <span className="bar"></span>
+                        </div>
+                        <ul className="recipe__ingredients">
+                            <div className="recipe__counter">
+                                <h3>INGREDIENTS</h3>
+                                <RestaurantIcon className="yield__icon" />
+                                <p>{recipe.recipe.yield}</p>
+                            </div>
                             {ingredients?.map((ingredient) => 
                                 <li>{ingredient}</li>
                             )}
+                        <div className="ingredients__border">
+                            <span className="bar"></span>
                         </div>
+                        </ul>
                     </div>
                     <div className="recipe__thirdCol">
                             <div className="recipe__info">
@@ -131,9 +146,10 @@ function Recipe() {
                             </div>
                     </div>
                 </div>
-                <div className="extra__recipes">
-                    <h2>Not to your taste? Check out some more recipes!</h2>
+                <div className="border">
+                    <span className="bar"></span>
                 </div>
+
             </div>
         </div>
     )
