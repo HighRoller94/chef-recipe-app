@@ -1,13 +1,13 @@
 .recipes {
     display: grid;
     justify-content: center;
-    width: calc(64%);
-    grid-template-columns: repeat(auto-fit, minmax(263px, 225px));
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(77vw, 225px));
     grid-column-gap: 55px;
     grid-row-gap: 55px;
-    margin: auto;
-    padding-top: 60px;
-    padding-bottom: 4rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 0rem;
 }
 
 @media query and (min-width: 768px) {

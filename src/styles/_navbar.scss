@@ -6,14 +6,14 @@
     top: 0;
     align-items: center;
     justify-content: center;
-    background-color: rgb(250, 250, 250);
-    border-bottom: 2px solid #FFD5D5;
+    background-color: white;
+    border-bottom: 1px solid #FFD5D5;
     z-index: 10;
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 82%;
+        width: 80%;
         height: 0;
         transition: 200ms ease-in;
         .nav__left {
@@ -70,7 +70,7 @@
                 transition: all .75s ease;
                 background-color: white;
                 left: -1000px;
-                top: 3.55rem;
+                top: 3.45rem;
                 opacity: 1;
                 width: 37.5%;
                 height: 100vh;
@@ -81,10 +81,10 @@
                 .navbar__item {
                     margin: .75rem 0;
                     .navbar__links {
-                        font-size: 1.2rem;
+                        font-size: 1.1rem;
                         font-weight: 400;
-                        text-transform: uppercase;
-                        color: #707070;
+                        color: $dark;
+                        font-family: 'Source Serif Pro', serif;
                     }
                 }
                 .nav__icons {
@@ -107,21 +107,21 @@
                 transition: all .75s ease;
                 background-color: white;
                 left: 0px;
-                top: 3.55rem;
+                top: 3.45rem;
                 opacity: 1;
                 width: 37.5%;
                 height: 100vh;
                 z-index: 99;
-                list-style: none;
+                list-style: none; 
                 padding-top: 4rem;
                 padding-bottom: 1rem;
                 .navbar__item {
                     margin: .75rem 0;
                     .navbar__links {
-                        font-size: 1.2rem;
+                        font-size: 1.1rem;
                         font-weight: 400;
-                        text-transform: uppercase;
-                        color: #707070;
+                        color: $dark;
+                        font-family: 'Source Serif Pro', serif;
                     }
                 }
                 .nav__icons {
@@ -224,7 +224,6 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    
                     .nav__logo {
                         margin-left: 1rem;
                     }
@@ -239,22 +238,26 @@
                 }
             }
             .nav__right {
+                display: flex;
+                align-items: center;
                 h4 {
                     display: flex;
                     font-weight: 300;
                     color: $chefPink;
+                    text-transform: uppercase;
+                    font-size: .9rem;
                 }
                 .nav__icons {
                     display: flex;
-                    margin-left: 1rem;
+                    margin-left: 1.5rem;
                     .nav__icon {
                         margin: 0 .75rem;
-                        font-size: 2rem;
+                        font-size: 1.75rem;
                     }
                 }
                 .account__icon {
-                    margin-left: 1rem;
-                    font-size: 3rem;
+                    margin-left: 3rem;
+                    font-size: 3.25rem;
                 }
             }
         }

@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Source+Serif+Pro:wght@300;400;600;700&display=swap');
 
-$chefPink: #ED7575;
+$chefPink: #F88787;
 $chefLightPink: #F3A2A2;
 $dark: #2c2c2c;
 
 @import './navbar';
+
+@import './homePage';
 @import './search';
-@import './recipe';
-@import './recipes';
-@import './results';
-@import './home';
 @import './heroContent';
 @import './blog';
+
+@import './resultsPage';
+@import './recipes';
+@import './recipe';
+@import './pagination';
+
+@import './recipePage';
+
 @import './newsletter';
 @import './footer';
-@import './recipePage';
-@import './pagination';
+
 
 * {
     margin: 0;

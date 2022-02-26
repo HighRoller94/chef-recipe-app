@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "aos": "^2.3.4",
     "axios": "^0.24.0",
+    "cors": "^2.8.5",
     "firebase": "^9.6.0",
     "material-ui": "^0.20.2",
     "node-sass": "^6.0.1",

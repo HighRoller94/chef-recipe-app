@@ -21,11 +21,10 @@
             width: 1.75rem;
             height: 1.75rem;
             .pages__link {
-                
                 font-size: 1rem;
-                &:hover {
-                    cursor: pointer;
-                }
+            }
+            &:hover {
+                cursor: pointer;
             }
         }
         .pages.active {
@@ -39,11 +38,63 @@
         .pagination__forwardIcon {
             margin: 0 .5rem;
             cursor: pointer;
-            
         }
     }
-    .total__pages {
-        
-        font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    
+}
+
+@media screen and (min-width: 1312px) {
+    .pagination {
+        display: flex;
+        justify-content: column;
+        align-items: center;
+        margin: 5rem auto 7rem auto;
+        .pages__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            .pagination__backIcon {
+                margin: 0 .5rem;
+                cursor: pointer;
+            }
+            .pages {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 .5rem;
+                border: 1px solid grey;
+                width: 1.75rem;
+                height: 1.75rem;
+                .pages__link {
+                    
+                    font-size: 1rem;
+                    
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .pages.active {
+                background-color: $chefLightPink;
+                color: white;
+                border: 1px solid $chefLightPink;
+            }
+            .pages__ellipses {
+                margin: 1rem .3rem 0 .3rem;
+            }
+            .pagination__forwardIcon {
+                margin: 0 .5rem;
+                cursor: pointer;
+                
+            }
+        }
+        .total__pages {
+            
+            font-size: 1rem;
+        }
     }
 }

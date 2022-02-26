@@ -78,7 +78,7 @@ function Pagination({ pageLink, setPageLink, currentPage, setCurrentPage, pagina
                     <div className="pages" onClick={getMoreRecipes}>
                         <p className="pages__link">{currentPage+1}</p>
                     </div>
-                    <p>...</p>
+                    <p className="pages__ellipses">...</p>
                     <div className="pages">
                         <p className="pages__link">{currentPage+4}</p>
                     </div>

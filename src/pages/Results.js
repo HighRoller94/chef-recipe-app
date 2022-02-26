@@ -31,7 +31,7 @@ function Results() {
 
     useEffect(() => {
         getRecipes();
-
+        
         const scrollTopIcon = document.querySelector('.scroll__top');
         const scrollTop = () => {
             scrollTopIcon.classList.toggle('active', window.scrollY > 800);
@@ -67,16 +67,14 @@ function Results() {
                 <KeyboardArrowUpIcon className="icon" />
             </div>
             <div className="search__header">
-                <div className="search__container">
-                    <div className="float__bar"></div>
-                    <div className="search__title">
-                        <h1>Search results for "{id}"</h1>
-                        {recipes == 0 ? (
-                            <p>Searching...</p>
-                        ) : (
-                            <p>{totalPages} matching results</p>
-                        )}
-                    </div>
+                <div className="float__bar"></div>
+                <div className="search__title">
+                    <h1>Search results for "{id}"</h1>
+                    {recipes == 0 ? (
+                        <p>Searching...</p>
+                    ) : (
+                        <p>{totalPages} matching results</p>
+                    )}
                 </div>
                 <div className="search">
                     <form onSubmit={getSearch}>
@@ -96,7 +94,7 @@ function Results() {
             </div>
             <img className="arrow" src={arrow}  alt="" />
             <div className="border">
-                <span className="bar"></span><p>just in time</p><span className="bar"></span>
+                <span className="bar"></span>
             </div>
             {recipes == 0 ? (
                 <div className="loading__recipes">
@@ -105,10 +103,6 @@ function Results() {
             ) : (
                 <Recipes recipes={recipes} />
             )}
-            
-            <div className="border">
-                <span className="bar"></span><p>just in time</p><span className="bar"></span>
-            </div>
             <Pagination pageLink={pageLink} setPageLink={setPageLink} currentPage={currentPage} setCurrentPage={setCurrentPage} setRecipes={setRecipes} totalPages={totalPages} pagination={pagination} setPagination={setPagination} />
         </div>
     )
