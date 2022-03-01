@@ -1,6 +1,6 @@
 .content__page {
     width: 100%;
-    margin-top: 2.5rem;
+    margin-top: 4.5rem;
     .content__container {
         display: flex;
         flex-direction: column-reverse;
@@ -19,7 +19,6 @@
             align-items: center;
             flex-direction: column;
             h1 {
-                
                 font-size: 1.75rem;
                 width: 75%;
                 font-family: 'Source Serif Pro', serif;
@@ -64,23 +63,6 @@
                     width: 100%;
                     object-fit: cover;
                 }
-            }
-        }
-        .content__viewMore {
-            margin-top: 1.5rem;
-            width: 80%;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            h2 {
-                font-family: 'Source Serif Pro', serif;
-                font-weight: 400;
-                font-size: 1.3rem;
-                margin-right: 1.25rem;
-            }
-            .forward__icon {
-                width: .5rem;
-                height: .75rem;
             }
         }
     }

@@ -7,7 +7,7 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import SearchIcon from '@material-ui/icons/Search';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import Recipes from '../components/Recipes';
+import Recipe from '../components/Recipe';
 import Pagination from '../components/Pagination';
 
 import arrow from '../assets/arrow.svg'
@@ -69,39 +69,39 @@ function Results() {
             <div className="search__header">
                 <div className="float__bar"></div>
                 <div className="search__title">
-                    <h1>Search results for "{id}"</h1>
+                    <h1>Search results for "<span>{id}</span>"</h1>
                     {recipes == 0 ? (
                         <p>Searching...</p>
                     ) : (
-                        <p>{totalPages} matching results</p>
+                        <p>{totalPages?.toLocaleString()} matching results</p>
                     )}
                 </div>
-                <div className="search">
-                    <form onSubmit={getSearch}>
-                        <div className="form">
-                            <div className="search__box">
-                                <SearchIcon className="search__icon" />
-                                <input type="text" spellCheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for your next meal..." />
-                                <button type="submit" disabled={!search}></button>
-                            </div>
+            </div>
+            <div className="search">
+                <form onSubmit={getSearch}>
+                    <div className="form">
+                        <div className="search__box">
+                            <SearchIcon className="search__icon" />
+                            <input type="text" spellCheck="false" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for your next meal..." />
+                            <button type="submit" disabled={!search}></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
                 <div className="filter">
                     <p>Filter</p>
                     <KeyboardArrowDownIcon className="filter__icon" />
                 </div>
-            </div>
-            <img className="arrow" src={arrow}  alt="" />
-            <div className="border">
-                <span className="bar"></span>
             </div>
             {recipes == 0 ? (
                 <div className="loading__recipes">
                     <CircularProgress color="secondary" />
                 </div>
             ) : (
-                <Recipes recipes={recipes} />
+                <div className="recipes">
+                    {recipes?.map((recipe) =>
+                        <Recipe key={recipe.label} recipe={recipe}/>
+                    )}
+                </div>
             )}
             <Pagination pageLink={pageLink} setPageLink={setPageLink} currentPage={currentPage} setCurrentPage={setCurrentPage} setRecipes={setRecipes} totalPages={totalPages} pagination={pagination} setPagination={setPagination} />
         </div>

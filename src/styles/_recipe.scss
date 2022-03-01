@@ -1,12 +1,15 @@
 .recipe {
-    display: flex;
-    flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    min-height: 27rem;
+    display: grid;
+    grid-template-columns: .8fr 1.1fr;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border: 1px solid $chefPink;
+    background-color: white;
     .recipe__image {
         width: 100%;
         overflow: hidden;
-        height: 20rem;
+        padding: 1rem;
+        height: 9rem;
         img {
             height: 100%;
             width: 100%;
@@ -18,27 +21,20 @@
         display: flex;
         position: relative;
         flex-direction: column;
-        margin-left: 11px;
-        padding: 1px;
-        height: 12vh;
+        padding-left: 2.25rem;
         .recipe__header {
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
             p {
-                margin-top: 5px;
                 font-size: 1rem;
                 font-weight: 200;
                 color: $chefPink;
             }
             h1 {
-                width: 97%;
-                margin-top: 2px;
-                font-size: 1.3rem;
+                width: 95%;
+                margin-top: 1rem;
+                font-size: 1.1rem;
                 font-weight: 200;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                display: inline-block;
             }
         }
         .recipe__icons {
@@ -46,37 +42,142 @@
             margin-top: 20px;
             .fav__icon {
                 color: $chefLightPink;
-                font-size: 1.7rem;
+                font-size: 2rem;
                 margin-left: -2px;
                 position: absolute;
-                bottom: 10px;
+                display: flex;
+                justify-content: bottom;
+                bottom: 1rem;
+                left: 2.25rem;
             }
             .recipe__counter {
                 position: absolute;
-                bottom: 7px;
-                right: 5px;
+                bottom: .65rem;
+                right: .9rem;
                 display: flex;
                 justify-content: bottom;
                 margin-left: auto;
                 margin-right: 8px;
                 align-items: center;
                 .yield__icon {
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                 }
                 p {
                     color: $chefPink;
                     margin-left: 7px;
-                    font-size: 1.3rem;
+                    margin-top: 2px;
+                    font-size: 1.5rem;
                 }
             }
         }
     }
-    &:hover {
-        opacity: 1;
-        cursor: pointer;
-        .recipe__image > img {
-            transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+    .recipe {
+        width: 100%;
+        .recipe__info {
+            padding-left: 1.75rem;
+            .recipe__header {
+                h1 {
+                    font-size: 1.1rem;
+                }
+            }
+            .recipe__icons {
+                .fav__icon {
+                    left: 1.9rem;
+                }
+            }
         }
     }
+}
 
+@media screen and (min-width: 1312px) {
+    .recipe {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        height: 27rem;
+        .recipe__image {
+            width: 100%;
+            padding:0;
+            overflow: hidden;
+            height: 20rem;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: 200ms ease-in;
+            }
+        }
+        .recipe__info {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            padding: .3rem 1rem .5rem .75rem;
+            height: 14vh;
+            .recipe__header {
+                display: flex;
+                flex-direction: column;
+                p {
+                    margin-top: 5px;
+                    font-size: 1rem;
+                    font-weight: 200;
+                    color: $chefPink;
+                }
+                h1 {
+                    width: 97%;
+                    margin-top: 2px;
+                    font-size: 1.2rem;
+                    font-weight: 200;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: inline-block;
+                }
+            }
+            .recipe__icons {
+                display: flex;
+                margin-top: 20px;
+                .fav__icon {
+                    color: $chefLightPink;
+                    font-size: 2rem;
+                    margin-left: -2px;
+                    position: absolute;
+                    display: flex;
+                    justify-content: bottom;
+                    bottom: .75rem;
+                    left: .75rem;
+                }
+                .recipe__counter {
+                    position: absolute;
+                    bottom: .7rem;
+                    right: .6rem;
+                    display: flex;
+                    justify-content: bottom;
+                    margin-left: auto;
+                    margin-right: 8px;
+                    align-items: center;
+                    .yield__icon {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        margin-top: -.1rem;
+                        color: $chefPink;
+                        margin-left: 7px;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+            .recipe__image > img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    
 }

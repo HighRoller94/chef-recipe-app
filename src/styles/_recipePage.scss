@@ -23,7 +23,7 @@
                 width: 95%;
                 h1 {
                     font-family: 'Source Serif Pro', serif;
-                    font-weight: 300;
+                    font-weight: 600;
                     font-size: 2.5rem;
                     width: 80vw;
                     color: $dark;
@@ -32,7 +32,7 @@
                     display: flex;
                     p {
                         color: $chefLightPink;
-                        font-size: .8rem;
+                        font-size: 1rem;
                         margin-top: .5rem;
                         .dot {
                             color: $dark;
@@ -90,7 +90,7 @@
                 }
                 .recipe__nutritional {
                     background-color: white;
-                    margin-top: 4rem;
+                    margin-top: 2rem;
                     width: 82%;
                     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
                     padding: 1rem;
@@ -389,6 +389,7 @@
                         margin-top: -.5rem;
                         display: flex;
                         p {
+                            margin-top: 1rem;
                             color: $chefLightPink;
                             font-size: 1.15rem;
                             .dot {
@@ -436,6 +437,7 @@
                 "recipe__firstCol recipe__secondCol recipe__thirdCol"; 
                 .recipe__firstCol {
                     margin-top: 0;
+                    max-height: 75vh;
                     grid-area: recipe__firstCol;
                     .recipe__image {
                         margin-top: 0;

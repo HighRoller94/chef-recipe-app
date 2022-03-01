@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
+    background-color: rgba(255, 255, 255, 1);
     height: 100%;
     width: 100%;
     .search {
@@ -13,7 +14,7 @@
         padding: 6.5rem 0 3.75rem 0;
         margin-left: -5px;
         h1 {
-            color: #f3f3f3;
+            color: white;
             font-size: 2.5rem;
             font-family: 'Source Serif Pro', serif;
             font-weight: 600;
@@ -111,7 +112,7 @@
     .search {
         padding: 7rem 0 4rem 0;
         h1 {
-            font-size: 3.7rem;
+            font-size: 3rem;
         }
         .form {
             .search__box {
@@ -137,7 +138,7 @@
 .search__section {
     .search {
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
         .form {
             .search__box {

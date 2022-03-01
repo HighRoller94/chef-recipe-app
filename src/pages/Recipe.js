@@ -50,6 +50,7 @@ function Recipe() {
                         <FavoriteIcon className="icon" />
                     </div>
                 </div>
+                <span className="bar"></span>
                 <div className="recipe__grid">
                     <div className="recipe__firstCol">
                         <div className="recipe__image">
@@ -97,59 +98,60 @@ function Recipe() {
                         </ul>
                     </div>
                     <div className="recipe__thirdCol">
+                        <SimCard className="recipe__cardIcon" />
+                        <div className="info__header">
+                            <h2>RECIPE</h2>
+                            <h4>{recipe.recipe.source}</h4>
+                        </div>
+                        <div className="info__url">
+                            <h2>Link</h2>
                             <div className="recipe__info">
-                                <SimCard className="recipe__cardIcon" />
-                                <div className="info__header">
-                                    <h2>RECIPE</h2>
-                                    <p>{recipe.recipe.source}</p>
-                                </div>
-                                <div className="info__url">
-                                    <h2>Link</h2>
-                                    <div className="url">
-                                        <LanguageIcon className="info__icon"/>
-                                        <a href={recipe.recipe.url} target="_blank">{recipe.recipe.label}</a>
-                                    </div>
-                                </div>
-                                <div className="info__mealType">
-                                    <h2>Meal Type</h2>
-                                    <div className="mealType">
-                                        <LocalDining className="info__icon"/>
-                                        <p>{recipe.recipe.mealType[0]}</p>
-                                    </div>
-                                </div>
-                                <div className="info__dishType">
-                                    <h2>Dish Type</h2>
-                                    <div className="dishType">
-                                        <p>{recipe.recipe.dishType[0]}</p>
-                                    </div>
-                                </div>
-                                <div className="info__totalTime">
-                                    <h2>Total Time</h2>
-                                    <div className="totalTime">
-                                        <AccessTime className="info__icon"/>
-                                        <p>{recipe.recipe.totalTime} minutes</p>
-                                    </div>
-                                </div>
-                                <div className="info__totalCal">
-                                    <h2>Total Calories</h2>
-                                    <div className="totalCal">
-                                        <Info className="info__icon"/>
-                                        <p>{calories} cal ({recipe.recipe.yield} servings) </p>
-                                    </div>
-                                </div>
-                                <div className="info__cuisineType">
-                                    <h2>Cuisine Type</h2>
-                                    <div className="cuisineType">
-                                        <p>{recipe.recipe.cuisineType[0]}</p>
-                                    </div>
-                                </div>
+                                <LanguageIcon className="info__icon"/>
+                                <a href={recipe.recipe.url} target="_blank">{recipe.recipe.label}</a>
                             </div>
+                        </div>
+                        <div className="info__mealType">
+                            <h2>Meal Type</h2>
+                            <div className="recipe__info">
+                                <LocalDining className="info__icon"/>
+                                <p>{recipe.recipe.mealType[0]}</p>
+                            </div>
+                        </div>
+                        <div className="info__dishType">
+                            <h2>Dish Type</h2>
+                            <div className="recipe__info">
+                                <p>{recipe.recipe.dishType[0]}</p>
+                            </div>
+                        </div>
+                        <div className="info__totalTime">
+                            <h2>Total Time</h2>
+                            <div className="recipe__info">
+                                <AccessTime className="info__icon"/>
+                                <p>{recipe.recipe.totalTime} minutes</p>
+                            </div>
+                        </div>
+                        <div className="info__totalCal">
+                            <h2>Total Calories</h2>
+                            <div className="recipe__info">
+                                <Info className="info__icon"/>
+                                <p>{calories} cal ({recipe.recipe.yield} servings) </p>
+                            </div>
+                        </div>
+                        <div className="info__cuisineType">
+                            <h2>Cuisine Type</h2>
+                            <div className="recipe__info">
+                                <p>{recipe.recipe.cuisineType[0]}</p>
+                            </div>
+                        </div>
+                        <div className="info__cuisineType">
+                            <h2>Yield</h2>
+                            <div className="recipe__info">
+                                <p>Serves {recipe.recipe.yield}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="border">
-                    <span className="bar"></span>
-                </div>
-
+                <span className="bar"></span>
             </div>
         </div>
     )

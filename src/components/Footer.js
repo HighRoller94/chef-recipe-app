@@ -14,7 +14,7 @@ function Footer() {
             <div className="footer__container">
                 <div className="container">
                     <div className="footer__logo">
-                        <h2 onClick={scrollToTop}>chef</h2>
+                        <h2 onClick={scrollToTop}>Eatz</h2>
                         <p>Connect with us</p>
                         <div className="footer__icons">
                             {/* Facebook Icon */}
@@ -71,7 +71,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer__copyright">
-                    <h4 className="copyright">Copyright Chef 2021</h4>
+                    <h4 className="copyright">Copyright Eatz 2021</h4>
                     <p className="icon">&copy;</p>
                 </div>
             </div>

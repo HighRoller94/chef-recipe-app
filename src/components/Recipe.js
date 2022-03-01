@@ -13,7 +13,6 @@ function Recipe({ recipe }) {
     useEffect(() => {
         Aos.init({ duration: 1000 });
     }, []);
-    
     return (
         <Link to={{
             pathname: `/${recipe.recipe.label}`,
@@ -22,13 +21,18 @@ function Recipe({ recipe }) {
             }
             }}
             >
-            <div data-aos="fade-up" className="recipe">
-                <div className="recipe__image">
+            <div className="recipe">
+                <div data-aos="fade" className="recipe__image">
                     <img src={recipe.recipe.image} alt="" />
                 </div>
                 <div className="recipe__info">
                     <div className="recipe__header">
-                        <p>{recipe.recipe?.dietLabels[0]}</p>
+                        {recipe.recipe?.dietLabels[0] ? (
+                            <p>{recipe.recipe?.dietLabels[0]}</p>
+                        ) : (
+                            <p>{recipe.recipe?.healthLabels[0]}</p>
+                        )}
+                        
                         <h1>{recipe.recipe.label}</h1>
                     </div>
                     <div className="recipe__icons">

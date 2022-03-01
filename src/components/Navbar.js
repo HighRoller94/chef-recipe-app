@@ -29,6 +29,14 @@ function Navbar() {
             menu.classList.toggle('active')
             navMenu.classList.toggle('active')
         })
+        
+        const links = document.querySelectorAll(".navbar__links");
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove('active');
+                menu.classList.toggle('active');
+            })
+        })
     }, [search])
 
     return (
@@ -42,7 +50,7 @@ function Navbar() {
                     </div>
                     <div className="navbar__logo" >
                         <RestaurantIcon className="logo" />
-                        <h2 onClick={scrollToTop} className="nav__logo">chef</h2>
+                        <h2 onClick={scrollToTop} className="nav__logo">Eatz</h2>
                     </div>
                     
                     <ul className="navbar__menu">

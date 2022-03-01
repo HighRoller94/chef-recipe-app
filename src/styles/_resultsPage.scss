@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     background-color: #fcfcfc;
+    position: relative;
     .scroll__top {
         display: flex;
         justify-content: center;
@@ -35,7 +36,6 @@
     }
     .search__header {
         padding-top: 6rem;
-        position: relative;
         display: flex;
         flex-direction: column;
         .search__title {
@@ -49,167 +49,181 @@
                 width: 80%;
                 font-family: 'Source Serif Pro', serif;
                 font-weight: 600;
-                font-size: 2.75rem;
+                font-size: 2.5rem;
                 color: $dark;
             }
             p {
-                text-transform: uppercase;
-                color: $dark;
+                color: $chefPink;
                 font-size: .9rem;
             }
+            span {
+                color: $chefPink;
+            }
         }
-        .search {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .form {
-                background-color: white;
-                .search__box {
-                    margin-top: .9rem;
+    }
+    .search {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .form {
+            background-color: white;
+            .search__box {
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                button {
+                    display: none;
+                }
+                .search__icon {
+                    margin-left: 1rem;
+                    opacity: 0.7;
+                    font-size: 1.5rem;
+                }
+                input {
+                    outline: none;
+                    padding: .75rem 1rem;
+                    border: none;
+                    width: 60vw;
+                    height: 1.5rem;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    color: #2c2c2c;
                     display: flex;
-                    align-items: center;
-                    button {
-                        display: none;
+                    justify-content: center;
+                    &::placeholder {
+                        font-size: .95rem;
+                        text-align: center;
                     }
-                    .search__icon {
-                        margin-left: 1rem;
-                        opacity: 0.2;
-                        font-size: 1.5rem;
-                    }
-                    input {
-                        outline: none;
-                        padding: .75rem 1rem;
-                        border: none;
-                        width: 40vw;
-                        font-size: .8rem;
-                        font-weight: 300;
-                        color: #2c2c2c;
-                        display: flex;
-                        justify-content: center;
-                        &::placeholder {
-                            font-size: .8rem;
-                            opacity: 0.7;
-                            text-align: center;
-                        }
-                        &:focus::placeholder {
-                            color: transparent;
-                        }
+                    &:focus::placeholder {
+                        color: transparent;
                     }
                 }
             }
         }
-        .filter {
-            display: none;
-        }
+    }
+    .filter {
+        display: none;
     }
     .arrow {
-        width: 8rem;
-        position: absolute;
-        top: 13.5rem;
-        left: -.1rem;
-        transform: rotate(-15deg);
+        display: none;
+        
     }
-    .border {
-        width: 79%;
-        display: flex;
-        padding-top: 5.5rem;
-        padding-bottom: 1rem;
-        opacity: 0.5;
-        span {
-            height: 1px;
-            background-color: $dark;
-            width: 100%;
-        }
+    .loading__recipes {
+        margin-top: 3rem;
+    }
+    .recipes {
+        display: grid;
+        justify-content: center;
+        width: 100%;
+        grid-template-columns: repeat(1, 95%);
+        gap: 2rem;
+        margin: 0 auto;
+        margin-top: 3.5rem;
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        background-color: #b4b4b4;
     }
 }
 
 @media screen and (min-width: 768px) {
-
+    .results__page {
+        display: flex;
+        .search__header {
+            padding-top: 6.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            text-align: left;
+            width: 93%;
+            .float__bar {
+                background-color: $chefLightPink;
+                height: 5rem;
+                width: .5rem;
+                margin-top: .9rem;
+            }
+            .search__title {
+                border: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                text-align: left;
+                align-items: start;
+                margin-left: 2rem;
+                h1 {
+                    width: 100%;
+                    font-size: 2.2rem;
+                }
+                p {
+                    font-size: 1rem;
+                    text-align: left;
+                }
+            }
+        }
+        .search {
+            margin-top: 2rem;
+            width: 93%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: start;
+            .form {
+                .search__box {
+                    input {
+                        width: 40vw;
+                    }
+                }
+            }
+            
+        }
+        .recipes {
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 46%);
+            width: 100%;
+            grid-gap: 30px;
+        }
+        .arrow {
+            display: flex;
+            width: 8rem;
+            position: absolute;
+            top: 15rem;
+            left: 10%;
+            transform: rotate(10deg);
+        }
+    }
 }
 
 @media screen and (min-width: 1312px) {
     .results__page {
         .search__header {
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            width: calc(63.5%);
-            .search__container {
-                display: flex;
-                .float__bar {
-                    margin-top: 5px;
-                    height: 95px;
-                    background-color: $chefLightPink;
-                    width: 9px;
-                }
-                .search__title {
-                    margin-left: 27px;
-                    h1 {
-                        margin-top: -5px;
-                        font-family: 'Source Serif Pro', serif;
-                        font-size: 3.5rem;
-                        font-weight: 600;
-                        color: #2c2c2c;
-                    }
-                    p {
-                        margin-top: 10px;
-                        margin-left: 2px;
-                        font-size: 1.2rem;
-                        opacity: 0.9; 
-                        color: $chefLightPink;
-                    }
-                }
+            padding-top: 7rem;
+            width: 85%;
+            .float__bar {
+                height: 5.5rem;
+                margin-top: 1rem;
             }
-            
-            .filter {
-                display: flex;
-                margin-left: auto;
-                margin-top: 40px;
-                p {
-                    margin-top: 2px;
-                    font-size: 1rem;
-                }
-                .filter__icon {
-                    margin-left: 5px;
-                    margin-top: 3px;
-                    font-size: 1.5rem;
-                }
-                &:hover {
-                    cursor: pointer
+            .search__title {
+                h1 {
+                    font-size: 2.75rem;
                 }
             }
         }
-        
-        .loading__recipes {
-            display: flex;
-            justify-content: center;
-            width: calc(63.5%);
-            margin: 0 auto;
-            padding-top: 10vh;
-            padding-bottom: 50vh;
+        .search {
+            width: 85%;
+            .form {
+                .search__box {
+                    width: 20vw;
+                }
+            }
         }
-        .border {
+        .recipes {
+            margin-top: 4rem;
+            padding-top: 5rem;
+            display: grid;
             width: 100%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            span {
-                width: 27.4%;
-                display: flex;
-                background-color: #2c2c2c;
-                height: 2px;
-                border-radius: 50%;
-            }
-            p {
-                color: $chefLightPink;
-                margin: 0 32px;
-                font-family: 'Segoe Script';
-            }
+            grid-template-columns: repeat(4, 20%);
         }
     }
-    
 }
