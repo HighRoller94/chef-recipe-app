@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Aos from 'aos';
 
 import "aos/dist/aos.css";
@@ -8,8 +8,13 @@ import image2 from '../../assets/hero/image2.svg';
 import image3 from '../../assets/hero/image3.svg';
 
 function HeroContent() {
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, []);
+
     return (
-        <div className="content__page">
+        <div className="content__page" data-aos="fade-up">
             <div className="content__container">
                 <div className="content__imagery">
                     <div className="main__image">

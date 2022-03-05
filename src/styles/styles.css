@@ -168,7 +168,7 @@
   height: 36vh;
   z-index: 99;
   list-style: none;
-  padding-top: 1rem;
+  padding-top: 1.25rem;
   border-bottom: 1px solid #F3A2A2;
   padding-bottom: 1rem;
   padding-left: 2.5rem;
@@ -180,9 +180,13 @@
 
 .nav .navbar .nav__left .navbar__menu.active .navbar__item .navbar__links {
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 600;
   color: #707070;
   font-family: 'Source Serif Pro', serif;
+}
+
+.nav .navbar .nav__left .navbar__menu.active .navbar__item .navbar__links:hover {
+  opacity: 0.7;
 }
 
 .nav .navbar .nav__left .navbar__menu.active .nav__icons {
@@ -194,6 +198,11 @@
   font-weight: 300;
   color: #F3A2A2;
   margin-bottom: 1rem;
+}
+
+.nav .navbar .nav__left .navbar__menu.active .nav__icons h4:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .nav .navbar .nav__left .navbar__menu.active .nav__icons .nav__icon {
@@ -291,7 +300,7 @@
 
 @media screen and (min-width: 1312px) {
   .nav {
-    height: 64px;
+    height: 60px;
   }
   .nav .navbar {
     width: 75%;
@@ -347,7 +356,7 @@
     margin-left: 1.5rem;
   }
   .nav .navbar .nav__right .nav__icons .nav__icon {
-    margin: 0 .75rem;
+    margin: 0 .65rem;
     font-size: 1.75rem;
   }
   .nav .navbar .nav__right .nav__icons .nav__icon:hover {
@@ -357,115 +366,8 @@
   .nav .navbar .nav__right .account__icon {
     margin-left: 3rem;
     margin-right: .6rem;
-    font-size: 3.25rem;
+    font-size: 3rem;
   }
-}
-
-.hero__section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.hero__section .border:nth-child(1) {
-  width: 90%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 40px;
-}
-
-.hero__section .border:nth-child(1) span {
-  width: calc(20%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #2c2c2c;
-  height: 2px;
-  border-radius: 50%;
-}
-
-.hero__section .border:nth-child(1) p {
-  color: #F3A2A2;
-  font-size: .9rem;
-  margin: 0 1.4rem;
-}
-
-.hero__section .border:nth-child(3) {
-  width: 90%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 40px;
-}
-
-.hero__section .border:nth-child(3) span {
-  width: calc(29.7%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #2c2c2c;
-  height: 2px;
-  border-radius: 50%;
-}
-
-.hero__section .border:nth-child(3) p {
-  color: #F3A2A2;
-  margin: 0 32px;
-}
-
-.hero__section .border:nth-child(5) {
-  width: 90%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 40px;
-}
-
-.hero__section .border:nth-child(5) span {
-  width: calc(30.6%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #2c2c2c;
-  height: 2px;
-  border-radius: 50%;
-}
-
-.hero__section .border:nth-child(5) p {
-  color: #F3A2A2;
-  margin: 0 32px;
 }
 
 .search__section {
@@ -698,7 +600,7 @@
 
 .content__page {
   width: 100%;
-  margin-top: 4.5rem;
+  margin-top: 3rem;
 }
 
 .content__page .content__container {
@@ -868,8 +770,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: 85%;
-  margin-top: 3.25rem;
-  margin-bottom: 3rem;
+  margin: 3rem auto 6rem auto;
 }
 
 .blog__container:hover {
@@ -1241,7 +1142,6 @@
   margin-top: 3.5rem;
   padding-top: 2rem;
   padding-bottom: 5rem;
-  background-color: #b4b4b4;
 }
 
 @media screen and (min-width: 768px) {
@@ -1338,8 +1238,8 @@
 
 @media screen and (min-width: 1312px) {
   .results__page .search__header {
-    padding-top: 7rem;
-    width: 85%;
+    padding-top: 8.5rem;
+    width: 75%;
   }
   .results__page .search__header .float__bar {
     height: 5.5rem;
@@ -1349,19 +1249,18 @@
     font-size: 2.75rem;
   }
   .results__page .search {
-    width: 85%;
+    width: 75%;
   }
   .results__page .search .form .search__box {
     width: 20vw;
   }
   .results__page .recipes {
-    margin-top: 4rem;
-    padding-top: 5rem;
+    margin-top: 5rem;
     display: -ms-grid;
     display: grid;
-    width: 100%;
-    -ms-grid-columns: (20%)[4];
-        grid-template-columns: repeat(4, 20%);
+    width: 70%;
+    -ms-grid-columns: (25%)[4];
+        grid-template-columns: repeat(4, 25%);
   }
 }
 
@@ -1373,7 +1272,6 @@
   margin: 0 auto;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  border: 1px solid #F88787;
   background-color: white;
 }
 
@@ -1623,7 +1521,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 5rem auto 6rem auto;
+  margin: 0 auto 6rem auto;
 }
 
 .pagination .pages__container {
@@ -1694,7 +1592,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 5rem auto 7rem auto;
+    margin: 2rem auto 8rem auto;
   }
   .pagination .pages__container {
     display: -webkit-box;
@@ -1724,8 +1622,8 @@
             align-items: center;
     margin: 0 .5rem;
     border: 1px solid grey;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
   }
   .pagination .pages__container .pages .pages__link {
     font-size: 1rem;
@@ -2253,6 +2151,7 @@
     min-width: 1000px;
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 9rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2266,7 +2165,7 @@
     display: -ms-flexbox;
     display: flex;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
   .recipe__page .recipe__container .recipe__header .float__bar {
     background-color: #F3A2A2;
@@ -2281,7 +2180,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .recipe__page .recipe__container .recipe__header .recipe__title h1 {
     font-size: 4rem;
@@ -2329,15 +2228,15 @@
   .recipe__page .recipe__container .recipe__grid {
     display: -ms-grid;
     display: grid;
-    width: 70%;
-    margin-top: 1rem;
+    width: 75%;
+    margin-top: 2rem;
     min-width: 1000px;
-    max-width: 1300px;
+    max-width: 1400px;
     -ms-grid-columns: 1.2fr .9fr 1.05fr;
         grid-template-columns: 1.2fr .9fr 1.05fr;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     gap: 1.5rem;
         grid-template-areas: "recipe__firstCol recipe__secondCol recipe__thirdCol";
   }
@@ -2686,7 +2585,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 77%;
-  padding: 3.5rem 0 4rem 0;
+  padding: 3.5rem 0 5rem 0;
   margin: 0 auto;
 }
 
@@ -2701,7 +2600,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
 }
 
 .footer .footer__container .container .footer__logo {
@@ -2816,7 +2715,7 @@
 
 .footer .footer__container .footer__copyright .copyright {
   font-weight: 300;
-  font-size: .7rem;
+  font-size: .85rem;
   color: white;
 }
 
@@ -2897,6 +2796,15 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding-bottom: 5rem;
+  }
+  .footer .footer__container .footer__copyright .copyright {
+    font-size: .9rem;
+    color: white;
+  }
+  .footer .footer__container .footer__copyright .icon {
+    color: white;
+    margin-top: -2px;
+    margin-left: 1.3rem;
   }
 }
 

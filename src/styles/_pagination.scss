@@ -2,7 +2,7 @@
     display: flex;
     justify-content: column;
     align-items: center;
-    margin: 5rem auto 6rem auto;
+    margin: 0 auto 6rem auto;
     .pages__container {
         display: flex;
         justify-content: center;
@@ -51,7 +51,7 @@
         display: flex;
         justify-content: column;
         align-items: center;
-        margin: 5rem auto 7rem auto;
+        margin: 2rem auto 8rem auto;
         .pages__container {
             display: flex;
             justify-content: center;
@@ -67,8 +67,8 @@
                 align-items: center;
                 margin: 0 .5rem;
                 border: 1px solid grey;
-                width: 1.75rem;
-                height: 1.75rem;
+                width: 2.25rem;
+                height: 2.25rem;
                 .pages__link {
                     
                     font-size: 1rem;
