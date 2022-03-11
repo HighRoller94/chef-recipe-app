@@ -98,11 +98,11 @@ function Navbar() {
                     <h4>Follow us!</h4>
                     <div className="nav__icons">
                         {/* Facebook Icon */}
-                        <svg className="nav__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 27.329 27.164">
+                        <svg className="nav__icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27.329 27.164">
                             <path id="Icon_awesome-facebook" data-name="Icon awesome-facebook" d="M27.891,14.227a13.664,13.664,0,1,0-15.8,13.5V18.177H8.621v-3.95h3.471V11.216c0-3.424,2.039-5.316,5.161-5.316a21.029,21.029,0,0,1,3.059.267V9.528H18.589a1.975,1.975,0,0,0-2.227,2.134v2.565h3.79l-.606,3.95H16.362v9.549A13.669,13.669,0,0,0,27.891,14.227Z" transform="translate(-0.563 -0.563)" fill="#F3A2A2"/>
                         </svg>
                         {/* Instagram Icon */}
-                        <svg className="nav__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
+                        <svg className="nav__icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 32 32">
                             <g id="Group_45" data-name="Group 45" transform="translate(-1767 -15.961)">
                                 <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1767 15.961)" fill="#F3A2A2" stroke="#F3A2A2" strokeWidth="1.5">
                                 <circle cx="16" cy="16" r="16" stroke="none"/>
@@ -112,7 +112,7 @@ function Navbar() {
                             </g>
                         </svg>
                         {/* Twitter Icon */}
-                        <svg className="nav__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
+                        <svg className="nav__icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 32 32">
                             <g id="Group_49" data-name="Group 49" transform="translate(-1828 -17)">
                                 <g id="Group_46" data-name="Group 46" transform="translate(61 1.039)">
                                 <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1767 15.961)" fill="#F3A2A2" stroke="#F3A2A2" strokeWidth="1.5">
