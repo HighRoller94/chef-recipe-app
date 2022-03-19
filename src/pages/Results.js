@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { motion} from 'framer-motion/dist/framer-motion'
 
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -62,7 +63,10 @@ function Results() {
     }
 
     return (
-        <div className="results__page">
+        <motion.div className="results__page"
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1}}
+            exit={{ opacity: 0}}>
             <div className="scroll__top" onClick={scrollToTop} >
                 <KeyboardArrowUpIcon className="icon" />
             </div>
@@ -104,7 +108,7 @@ function Results() {
                 </div>
             )}
             <Pagination pageLink={pageLink} setPageLink={setPageLink} currentPage={currentPage} setCurrentPage={setCurrentPage} setRecipes={setRecipes} totalPages={totalPages} pagination={pagination} setPagination={setPagination} />
-        </div>
+        </motion.div>
     )
 }
 

@@ -28,16 +28,26 @@
                     width: 80vw;
                     color: $dark;
                 }
-                .recipe__label {
-                    display: flex;
-                    p {
-                        color: $chefLightPink;
-                        font-size: 1rem;
-                        margin-top: .5rem;
-                        .dot {
-                            color: $dark;
-                            margin: 0 10px;
-                            font-size: .7rem;
+                .recipe__infos {
+                    color: $chefLightPink;
+                    font-size: 1.15rem;
+                    margin-top: .5rem;
+                    .recipe__label {
+                        display: flex;
+                        p {
+                            color: $chefLightPink;
+                            font-size: 1.15rem;
+                            .dot {
+                                color: $dark;
+                                margin: 0 10px;
+                                font-size: .7rem;
+                            }
+                        }
+                    }
+                    .health__label {
+                        p {
+                            color: $chefLightPink;
+                            font-size: 1.15rem;
                         }
                     }
                 }
@@ -374,34 +384,39 @@
                 display: flex;
                 margin-top: 1rem;
                 margin-bottom: 3rem;
-                .float__bar {
-                    background-color: $chefLightPink;
-                    height: 1.5px;
-                    width: 5%;
-                }
+                width: 100%;
                 .recipe__title {
                     display: flex;
                     flex-direction: column;
-                    margin-top: 3rem;
+                    margin-top: 1rem;
                     h1 {
+                        width: 60%;
                         font-size: 4rem;
                     }
-                    .recipe__label {
-                        margin-top: -.5rem;
-                        display: flex;
-                        p {
-                            margin-top: 1rem;
-                            color: $chefLightPink;
-                            font-size: 1.15rem;
-                            .dot {
-                                color: $dark;
-                                margin: 0 10px;
-                                font-size: .7rem;
+                    .recipe__infos {
+                        color: $chefLightPink;
+                        font-size: 1.15rem;
+                        .recipe__label {
+                            display: flex;
+                            p {
+                                color: $chefLightPink;
+                                font-size: 1.15rem;
+                                .dot {
+                                    color: $dark;
+                                    margin: 0 10px;
+                                    font-size: .7rem;
+                                }
+                            }
+                        }
+                        .health__label {
+                            p {
+                                color: $chefLightPink;
+                                font-size: 1.15rem;
                             }
                         }
                     }
                     .recipe__time {
-                        margin-top: 1.75rem;
+                        margin: 1.5rem 0 0rem 0;
                         .icon {
                             font-size: 1.5rem;
                         }
@@ -412,7 +427,7 @@
                     }
                 }
                 .recipe__fav {
-                    margin-top: 1.5rem;
+                    margin-top: 1.75rem;
                     .icon {
                         font-size: 3rem;
                     }
@@ -514,28 +529,7 @@
                     }
                 }
             }
-            .border:nth-child(4) {
-                width: 100%;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 3.5rem;
-                margin-bottom: 10rem;
-                span {
-                    width: 43%;
-                    display: flex;
-                    background-color: $dark;
-                    height: 2px;
-                    border-radius: 50%;
-                }
-                p {
-                    color: $chefPink;
-                    min-width: 125px;
-                    margin: 0 30px;
-                    font-family: 'Segoe Script';
-                }
-            }
+            
         }
     }
 }

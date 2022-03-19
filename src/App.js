@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 import Search from './components/Search';
 import Results from './pages/Results';
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="app">
       <Router>
+        <AnimatePresence exitBeforeEnter>
         <ScrollToTop />
         <Switch>
           <Route path='/search/:id'>
@@ -35,6 +37,7 @@ function App() {
             <Footer />
           </Route>
         </Switch>
+        </AnimatePresence>
       </Router>
     </div>
   );

@@ -55,13 +55,13 @@ function Navbar() {
                     
                     <ul className="navbar__menu">
                         <li className="navbar__item">
-                            <Link to="/"><h1 className="navbar__links">HOME</h1></Link>
+                            <Link to="/"><h1 className="navbar__links">Home</h1></Link>
                         </li>
                         <li className="navbar__item">
-                            <Link to="/"><h1 className="navbar__links">MY RECIPES</h1></Link>
+                            <Link to="/"><h1 className="navbar__links">My Recipes</h1></Link>
                         </li>
                         <li className="navbar__item">
-                            <Link to="/"><h1 className="navbar__links">MEAL PLANNER</h1></Link>
+                            <Link to="/"><h1 className="navbar__links">Meal Planner</h1></Link>
                         </li>
                         <div className="nav__icons">
                             <h4>Follow us!</h4>

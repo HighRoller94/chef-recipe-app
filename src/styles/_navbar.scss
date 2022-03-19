@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.02);
     z-index: 10;
     .navbar {
         display: flex;
@@ -30,9 +30,9 @@
                     display: block;
                     width: 1.7rem;
                     height: 3px;
-                    border-radius: 20px;
+                    border-radius: 50px;
                     margin: 3.1px auto;
-                    background-color: #707070;
+                    background-color: #a5a5a5;
                     transition: all 0.3s ease-in-out;
                 }
             }
@@ -73,30 +73,36 @@
                 top: 3.45rem;
                 opacity: 1;
                 width: 100%;
-                height: 36vh;
+                height: 30vh;
                 z-index: 99;
                 list-style: none;
-                padding-top: 1rem;
-                padding-bottom: 1rem;
+                padding-left: 2.5rem;
+                padding-bottom: 2.5rem;
+                padding-top: .5rem;
+                border-bottom: 1px solid $chefLightPink;
                 .navbar__item {
                     margin: .75rem 0;
                     .navbar__links {
                         font-size: 1.1rem;
                         font-weight: 400;
-                        color: $dark;
-                        font-family: 'Source Serif Pro', serif;
+                        color: #a5a5a5;
                     }
                 }
                 .nav__icons {
-                    padding-top: 2rem;
+                    padding-top: 1rem;
                     h4 {
                         font-size: 1rem;
-                        font-weight: 300;
+                        font-weight: 400;
                         color: $chefLightPink;
                         margin-bottom: 1rem;
                     }
                     .nav__icon {
-                        margin-right: 0.75rem;
+                        margin-right: 1.5rem;
+                        transition: 200ms ease-in;
+                        &:hover {
+                            cursor: pointer;
+                            opacity: 0.7;
+                        }
                     }
                 }
             }
@@ -107,44 +113,41 @@
                 transition: all .75s ease;
                 background-color: white;
                 left: 0px;
-                top: 3.5rem;
+                top: 3.45rem;
                 opacity: 1;
                 width: 100%;
-                height: 36vh;
+                height: 30vh;
                 z-index: 99;
                 list-style: none; 
-                padding-top: 1.25rem;
                 border-bottom: 1px solid $chefLightPink;
-                padding-bottom: 1rem;
                 padding-left: 2.5rem;
+                padding-bottom: 2.5rem;
+                padding-top: .5rem;
                 .navbar__item {
                     margin: .75rem 0;
                     .navbar__links {
                         font-size: 1.1rem;
-                        font-weight: 600;
-                        color: #707070;
-                        font-family: 'Source Serif Pro', serif;
+                        color: #a5a5a5;
+                        font-weight: 400;
                         &:hover {
                             opacity: 0.7;
                         }
                     }
                 }
                 .nav__icons {
-                    padding-top: 2rem;
+                    padding-top: 1rem;
                     h4 {
                         font-size: 1rem;
-                        font-weight: 300;
+                        font-weight: 400;
                         color: $chefLightPink;
                         margin-bottom: 1rem;
-                        &:hover {
-                            text-decoration: underline;
-                            cursor: pointer;
-                        }
                     }
                     .nav__icon {
-                        margin-right: 0.75rem;
+                        margin-right: 1.5rem;
+                        transition: 200ms ease-in;
                         &:hover {
                             cursor: pointer;
+                            opacity: 0.7;
                         }
                     }
                 }
@@ -186,7 +189,7 @@
                     .nav__logo {
                         margin-top: .1rem;
                         margin-left: 0;
-                        font-size: 2rem;
+                        font-size: 2.25rem;
                     }
                 }
                 .navbar__menu {
@@ -207,9 +210,8 @@
                     .navbar__item {
                         margin: 0 1.1rem;
                         .navbar__links {
-                            font-family: 'Source Serif Pro', serif;
-                            font-size: .9rem;
-                            color: #707070;
+                            font-size: 1rem;
+                            color: #a5a5a5;
                             &:hover {
                                 opacity: 0.7;
                             }
@@ -242,6 +244,7 @@
                     align-items: center;
                     .nav__logo {
                         margin-left: 1rem;
+                        font-size: 2.5rem;
                         transition: 200ms ease-in;
                         &:hover {
                             opacity: 0.8;
@@ -249,11 +252,11 @@
                     }
                 }
                 .navbar__menu {
-                    margin-left: 3rem;
+                    margin-left: 2.5rem;
                     .navbar__item {
-                        margin: 0 1rem;
+                        margin: 0 1.25rem;
                         .navbar__links {
-                            font-size: 1rem;
+                            font-size: 1.05rem;
                         }
                     }
                 }
@@ -265,6 +268,7 @@
                     display: flex;
                     font-family: 'Source Sans Pro', sans-serif;
                     color: $chefPink;
+                    font-weight: 400;
                     font-size: 1rem;
                 }
                 .nav__icons {
@@ -283,7 +287,7 @@
                 .account__icon {
                     margin-left: 2.5rem;
                     margin-right: .6rem;
-                    font-size: 2.65rem;
+                    font-size:3rem;
                 }
             }
         }

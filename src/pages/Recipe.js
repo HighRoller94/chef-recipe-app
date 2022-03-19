@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
+import { motion} from 'framer-motion/dist/framer-motion'
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -27,24 +28,41 @@ function Recipe() {
 
     console.log(recipe)
     return (
-        <div className="recipe__page">
+        <motion.div className="recipe__page"
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
+        exit={{ opacity: 0}}>
             <div className="recipe__container">
                 <div className="recipe__header">
                     <div className="float__bar"></div>
                     <div className="recipe__title">
                         <h1 className="recipe__name">{recipe?.recipe.label}</h1>
-                        <div className="recipe__label">
-                            <p className="recipe__label">{recipe?.recipe.dietLabels[0]}</p>
-                            {recipe.recipe.dietLabels[1] ? (
-                                <p><FiberManualRecordIcon className="dot"/>{recipe.recipe.dietLabels[1]}</p>
+                        <div className="recipe__infos">
+                            {recipe?.recipe.dietLabels[0] ? (
+                                <div className="recipe__label">
+                                    <p>{recipe?.recipe.dietLabels[0]}</p>
+                                    {recipe.recipe.dietLabels[1] ? (
+                                        <p><FiberManualRecordIcon className="dot"/>{recipe.recipe.dietLabels[1]}</p>
+                                    ) : (
+                                        null
+                                    )}
+                                </div>
                             ) : (
-                                null
+                                <div classsName="recipe__label">
+                                    <p>{recipe?.recipe.healthLabels[0]}</p>
+                                    
+                                </div>
                             )}
                         </div>
-                        <div className="recipe__time">
-                            <AccessTime className="icon"/>
-                            <p>{recipe.recipe.totalTime} minutes</p>
-                        </div>
+                        
+                        {recipe.recipe.totalTime ? (
+                            <div className="recipe__time">
+                                <AccessTime className="icon"/>
+                                <p>{recipe.recipe.totalTime} minutes</p>
+                            </div>
+                        ) : (
+                            null
+                        )}
                     </div>
                     <div className="recipe__fav">
                         <FavoriteIcon className="icon" />
@@ -153,7 +171,7 @@ function Recipe() {
                 </div>
                 <span className="bar"></span>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
