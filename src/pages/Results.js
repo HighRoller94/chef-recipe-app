@@ -31,6 +31,11 @@ function Results() {
     const APP_KEY = "b4e695ac6bd457749d819e171da3500e";
 
     useEffect(() => {
+
+        if (localStorage.getItem('savedRecipes') == null) {
+            localStorage.setItem('savedRecipes', '[]');
+        }
+        
         getRecipes();
         
         const scrollTopIcon = document.querySelector('.scroll__top');

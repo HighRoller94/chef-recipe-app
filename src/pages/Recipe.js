@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import { motion} from 'framer-motion/dist/framer-motion'
+import { motion } from 'framer-motion/dist/framer-motion'
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
