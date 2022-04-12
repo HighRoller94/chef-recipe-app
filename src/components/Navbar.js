@@ -11,8 +11,8 @@ function Navbar() {
         const menu = document.querySelector(".navbar__toggle");
         const navMenu = document.querySelector(".navbar__menu");
         menu.addEventListener("click", () => {
-            menu.classList.toggle('active')
-            navMenu.classList.toggle('active')
+            menu.classList.toggle('active');
+            navMenu.classList.toggle('active');
         })
         
         const links = document.querySelectorAll(".navbar__links");
@@ -40,7 +40,6 @@ function Navbar() {
                     <div className="navbar__logo" >
                         <RestaurantIcon className="logo" />
                         <Link to="/"><h1 className="nav__logo">Eatz</h1></Link>
-                        
                     </div>
                     
                     <ul className="navbar__menu">
