@@ -3,26 +3,28 @@
 
 ### [Live Site](https://recipe-app-bd949.web.app/)
 
-Eatz is a multipage react app connected to an eternal API that allows users to search their favourite recipes.
+Eatz is a multipage react app connected to an eternal API that allows users to search their favourite recipes, built with React and SASS.
 
 - Search the Edamam database
-- Recipes/results page includes pagination through search
+- Recipes/results page 
+- Includes pagination through search
+- My recipes page
+  - Save recipes with localStorage
 - Smooth page transitions
 - Fully responsive design compatible with all mobile devices
-  - Built mobile first and scales up
-- Inivididual recipe pages diplaying hit data
-  - Time needed (if found), nutritional data, ingredients etc.
-  - Contains links to external sources for more info such as instructions
+- Individidual recipe pages displaying hit data
 
-## Libaries used
+### What I learned
+
+Eatz was a great project to work on as it was my first basic react app connecting with an API, and taught me alot about react
+as a whole and working with JSON. it was also a chance to work with react-router, using history and params, configuring routes, and passing props between components. Using more basic js functions such as splice and indexof helped alot when it came to working with arrays. For the future i've definitely thought about adding more features such as a meal planner which is used with the Spoonacular API.
+
+### Libaries used
 - React Router Dom
-- AOS (Appear on scroll)
-- Framer Motion for page transitions
-- Material-ui / icons
+- Framer Motion
 - Axios
 - Cors
-- Node sass (sass)
 
-## Hosting
+### Hosting
 
 - Hosted with Firebase
