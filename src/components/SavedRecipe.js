@@ -1,11 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 
-function SavedRecipe({ recipe, updateRecipes }) {
+function SavedRecipe({ recipe, updateCount }) {
+
+    const RecipeRemovedToast = () => {
+        return (
+            <div>
+                <img src={recipe.recipe.image} alt="recipe__image" />
+                <p>{recipe.recipe.label} removed from favourites</p>
+            </div>
+        )
+    };
+
+    const displayRemovedMsg = () => {
+        toast(
+            <RecipeRemovedToast />
+        )
+    }
 
     const removeRecipeFromFavourites = () => {
         const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
@@ -15,7 +31,6 @@ function SavedRecipe({ recipe, updateRecipes }) {
                 if (index > -1) {
                     savedRecipes.splice(index, 1)
                     localStorage.setItem(`savedRecipes`, JSON.stringify(savedRecipes));;
-                    updateRecipes();
                 }
             }
         })
@@ -24,9 +39,7 @@ function SavedRecipe({ recipe, updateRecipes }) {
     return (
         <motion.div 
             className="saved__recipe"
-            initial={{ opacity: 0}}
-            animate={{ opacity: 1}}
-            exit={{ opacity: 0}}
+            whileHover={{opacity: 1}}
             layout
             >
             <Link to={{
@@ -51,7 +64,7 @@ function SavedRecipe({ recipe, updateRecipes }) {
                     <h1>{recipe.recipe.label}</h1>
                 </div>
                 <div className="recipe__icons">
-                    <FavoriteIcon className="fav__icon" onClick={() => {removeRecipeFromFavourites(); updateRecipes(); }}/>
+                    <FavoriteIcon className="fav__icon" onClick={() => { removeRecipeFromFavourites(); updateCount(); displayRemovedMsg(); }} />
                     <div className="recipe__counter">
                         <RestaurantIcon className="yield__icon" />
                         <p>{recipe.recipe.yield}</p>
