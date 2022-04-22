@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 
-function Pagination({ pageLink, setPageLink, currentPage, setCurrentPage, pagination, setPagination, totalPages }) {
+function Pagination({ updateCount, setPageLink, currentPage, setCurrentPage, pagination, setPagination, totalPages }) {
     const totalPageNumber = Math.ceil(totalPages/20);
 
     useEffect(() => {
@@ -31,6 +31,7 @@ function Pagination({ pageLink, setPageLink, currentPage, setCurrentPage, pagina
         setCurrentPage(currentPage+1)
         setPageLink(currentPage+1)
         scrollToTop();
+        updateCount();
     }
 
     const getPreviousRecipes = async () => {
@@ -60,10 +61,6 @@ function Pagination({ pageLink, setPageLink, currentPage, setCurrentPage, pagina
                     <div className="pages">
                         <p className="pages__link">{currentPage+2}</p>
                     </div>
-                    <p className="pages__ellipses">...</p>
-                    <div className="pages">
-                        <p className="pages__link">{currentPage+4}</p>
-                    </div>
                     <KeyboardArrowRightIcon onClick={getMoreRecipes} className="pagination__forwardIcon"/>
                 </div>
             ) : (
@@ -77,10 +74,6 @@ function Pagination({ pageLink, setPageLink, currentPage, setCurrentPage, pagina
                     </div>
                     <div className="pages" onClick={getMoreRecipes}>
                         <p className="pages__link">{currentPage+1}</p>
-                    </div>
-                    <p className="pages__ellipses">...</p>
-                    <div className="pages">
-                        <p className="pages__link">{currentPage+4}</p>
                     </div>
                     <KeyboardArrowRightIcon onClick={getMoreRecipes} className="pagination__forwardIcon"/>
                 </div>

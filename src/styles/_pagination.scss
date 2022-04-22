@@ -28,9 +28,9 @@
             }
         }
         .pages.active {
-            background-color: $chefLightPink;
+            background-color: $chefPink;
             color: white;
-            border: 1px solid $chefLightPink;
+            border: 1px solid $chefPink;
         }
         .pages__ellipses {
             margin: 1rem .3rem 0 .3rem;
@@ -40,10 +40,6 @@
             cursor: pointer;
         }
     }
-}
-
-@media screen and (min-width: 768px) {
-    
 }
 
 @media screen and (min-width: 1312px) {
@@ -70,18 +66,16 @@
                 width: 2rem;
                 height: 2rem;
                 .pages__link {
-                    
                     font-size: 1rem;
-                    
                 }
                 &:hover {
                     cursor: pointer;
                 }
             }
             .pages.active {
-                background-color: $chefLightPink;
+                background-color: $chefPink;
                 color: white;
-                border: 1px solid $chefLightPink;
+                border: 1px solid $chefPink;
             }
             .pages__ellipses {
                 margin: 1rem .3rem 0 .3rem;
@@ -93,7 +87,6 @@
             }
         }
         .total__pages {
-            
             font-size: 1rem;
         }
     }

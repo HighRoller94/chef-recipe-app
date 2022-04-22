@@ -169,15 +169,31 @@
             align-items: center;
             justify-content: center;
             width: 60%;
-            padding: 4rem 0 3rem 0;
+            padding: 4rem 0 2rem 0;
             .container {
                 display: flex;
                 justify-content: space-between;
-                padding-bottom: 5rem;
+                padding-bottom: 4rem;
+                .footer__logo {
+                    margin-top: -1rem;
+                    h2 {
+                        font-size: 3.25rem;
+                    }
+                    p {
+                        font-size: .9rem;
+                    }
+                    .footer__icons {
+                        margin-top: 1rem;
+                        width: 100%;
+                        .footer_icon {
+                            width: 1.8rem;
+                        }
+                    }
+                }
             }
             .footer__copyright {
                 .copyright {
-                    font-size: .9rem;
+                    font-size: .8rem;
                     color: white;
                 }
                 .icon {
@@ -186,6 +202,7 @@
                     margin-left: 1.3rem;
                 }
             }
+            
         }
         
     }

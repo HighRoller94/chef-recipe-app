@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-function Navbar() {
-    const [savedCount, setSavedCount] = useState();
-
+function Navbar({ savedCount }) {
+    
+    
     useEffect(() => {
         const menu = document.querySelector(".navbar__toggle");
         const navMenu = document.querySelector(".navbar__menu");
         menu.addEventListener("click", () => {
-            menu.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            menu.classList.toggle('active')
+            navMenu.classList.toggle('active')
         })
         
         const links = document.querySelectorAll(".navbar__links");
@@ -23,10 +23,8 @@ function Navbar() {
             })
         })
 
-        const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
-        setSavedCount(savedRecipes.length)
-
-    }, [savedCount])
+        
+    }, [])
 
     return (
         <div className="nav">
@@ -39,18 +37,18 @@ function Navbar() {
                     </div>
                     <div className="navbar__logo" >
                         <RestaurantIcon className="logo" />
-                        <Link to="/"><h1 className="nav__logo">Eatz</h1></Link>
+                        <Link to="/"><h1 className="nav__logo">eatz</h1></Link>
                     </div>
                     
                     <ul className="navbar__menu">
                         <li className="navbar__item">
-                            <Link to="/"><h1 className="navbar__links">Home</h1></Link>
+                            <Link to="/"><h1 className="navbar__links">Search</h1></Link>
                         </li>
                         <li className="navbar__item">
                             <Link to="/recipes"><h1 className="navbar__links">My Recipes</h1></Link>
                         </li>
                         <li className="navbar__item">
-                            <Link to="/"><h1 className="navbar__links">Meal Planner</h1></Link>
+                            <Link to="/recipes"><h1 className="navbar__links">Meal Planner</h1></Link>
                         </li>
                     </ul>
                 </div>
@@ -85,6 +83,7 @@ function Navbar() {
                         </svg>
                     </div>
                     <div className="favourites">
+                        <h4>{savedCount}</h4>
                         <Link to="/recipes"><FavoriteIcon className="fav__icon"/></Link>
                     </div>
                     

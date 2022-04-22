@@ -21,7 +21,7 @@
         align-items: center;
         width: 100%;
         h1 {
-            font-family: 'Source Serif Pro', serif;
+            font-family: 'Helvetica Neue', sans-serif;
             font-size: 1.75rem;
             color: #1c1c1c;
             width: 90%;
@@ -29,6 +29,7 @@
         p {
             text-transform: uppercase;
             font-family: 'Poppins', sans-serif;
+            letter-spacing: .2rem;
             font-weight: 300;
             color: $chefPink;
             font-size: .9rem;

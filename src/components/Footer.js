@@ -1,4 +1,4 @@
-import React, { useEffect }from 'react'
+import React from 'react'
 
 function Footer() {
 
@@ -14,7 +14,7 @@ function Footer() {
             <div className="footer__container">
                 <div className="container">
                     <div className="footer__logo">
-                        <h2 onClick={scrollToTop}>Eatz</h2>
+                        <h2 onClick={scrollToTop}>eatz</h2>
                         <p>Connect with us</p>
                         <div className="footer__icons">
                             {/* Facebook Icon */}

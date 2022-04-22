@@ -11,11 +11,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Recipe from '../components/Recipe';
 import Pagination from '../components/Pagination';
 
-import arrow from '../assets/arrow.svg'
-
 import '../styles/styles.scss'
 
-function Results() {
+function Results({ updateCount }) {
     const [recipes, setRecipes] = useState([]);
     const history = useHistory();
     const [search, setSearch] = useState('');
@@ -31,18 +29,15 @@ function Results() {
     const APP_KEY = "b4e695ac6bd457749d819e171da3500e";
 
     useEffect(() => {
-
         if (localStorage.getItem('savedRecipes') == null) {
             localStorage.setItem('savedRecipes', '[]');
         }
-        
-        getRecipes();
-        
         const scrollTopIcon = document.querySelector('.scroll__top');
         const scrollTop = () => {
             scrollTopIcon.classList.toggle('active', window.scrollY > 800);
         }
         window.addEventListener('scroll', scrollTop);
+        getRecipes();
     }, [id, pagination, currentPage]);
 
 
@@ -53,6 +48,7 @@ function Results() {
         setCurrentPage(currentPage)
         setPageLink(currentPage)
         setTotalPages(data.count)
+        updateCount();
     }
 
     const scrollToTop = () => {
@@ -79,7 +75,7 @@ function Results() {
                 <div className="float__bar"></div>
                 <div className="search__title">
                     <h1>Search results for "<span>{id}</span>"</h1>
-                    {recipes == 0 ? (
+                    {recipes === 0 ? (
                         <p>Searching...</p>
                     ) : (
                         <p>{totalPages?.toLocaleString()} matching results</p>
@@ -108,11 +104,20 @@ function Results() {
             ) : (
                 <div className="recipes">
                     {recipes?.map((recipe) =>
-                        <Recipe key={recipe.label} recipe={recipe}/>
+                        <Recipe updateCount={updateCount} key={recipe.uri} recipe={recipe}/>
                     )}
                 </div>
             )}
-            <Pagination pageLink={pageLink} setPageLink={setPageLink} currentPage={currentPage} setCurrentPage={setCurrentPage} setRecipes={setRecipes} totalPages={totalPages} pagination={pagination} setPagination={setPagination} />
+            <Pagination 
+                updateCount={updateCount} 
+                setPageLink={setPageLink} 
+                currentPage={currentPage} 
+                setCurrentPage={setCurrentPage} 
+                setRecipes={setRecipes} 
+                totalPages={totalPages} 
+                pagination={pagination} 
+                setPagination={setPagination} 
+            />
         </motion.div>
     )
 }

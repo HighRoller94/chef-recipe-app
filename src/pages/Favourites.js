@@ -7,19 +7,15 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 import SavedRecipe from '../components/SavedRecipe';
 
-function Favourites() {
+function Favourites({ updateCount, savedCount }) {
     const history = useHistory();
     const [recipes, setRecipes] = useState([]);
-    const [count, setCount] = useState();
-    const [savedCount, setSavedCount] = useState();
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
 
     const getUserSavedRecipes = () => {
         const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
         setRecipes(savedRecipes);
-        setSavedCount(savedRecipes.length)
-        setCount(0)
     }
 
     const getSearch = e => {
@@ -27,19 +23,16 @@ function Favourites() {
         history.push(`/search/${search}`)
     }
 
-    const updateRecipes = () => {
-        setCount(count+1);
-    }
-
     useEffect(() => {
         getUserSavedRecipes();
-    }, [count]);
+    }, [savedCount]);
 
     return (
     <motion.div className="favourites__page"
             initial={{ opacity: 0}}
             animate={{ opacity: 1}}
-            exit={{ opacity: 0}}>
+            exit={{ opacity: 0}}
+            >
         <div className="favourites__header">
             <div className="favourites__title">
                 <h1>My Saved Recipes</h1>
@@ -64,11 +57,11 @@ function Favourites() {
             <span className="divider"></span>
         </div>
         
-        <div className="saved__recipes">
+        <motion.div  className="saved__recipes">
             {recipes?.map((recipe) =>
-                <SavedRecipe key={recipe.uri} updateRecipes={updateRecipes} getRecipes={getUserSavedRecipes} recipe={recipe} />
+                <SavedRecipe key={recipe.label} updateCount={updateCount} recipe={recipe} />
             )}
-        </div>
+        </motion.div>
     </motion.div>
     )
 }

@@ -27,7 +27,7 @@ function HeroContent() {
                     
                 </div>
                 <div className="content__text">
-                    <h1>Top 10 recipes for Christmas and New Year</h1>
+                    <h1>Top 10 Recipes for Christmas and New Year</h1>
                     <h4>by john doe</h4>
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et delore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo...</p>
                     

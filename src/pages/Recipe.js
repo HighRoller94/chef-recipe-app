@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion/dist/framer-motion'
 
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import Aos from 'aos';
+
+import "aos/dist/aos.css"
+
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import LanguageIcon from '@material-ui/icons/Language';
@@ -13,7 +17,9 @@ import Info from '@material-ui/icons/Info';
 import SimCard from '@material-ui/icons/SimCard';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
-function Recipe() {
+function Recipe({ updateCount }) {
+    const [saved, setSaved] = useState(false);
+
     const location = useLocation()
     const recipe = location.state
 
@@ -26,7 +32,44 @@ function Recipe() {
 
     const ingredients = recipe?.recipe.ingredientLines
 
-    console.log(recipe)
+    const saveRecipeToFavourites = () => {
+        const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
+        savedRecipes.forEach(savedRecipe => {
+            if (savedRecipe.recipe.uri === recipe.uri) {
+                return;
+            }
+        })
+        savedRecipes.push(recipe);
+        localStorage.setItem(`savedRecipes`, JSON.stringify(savedRecipes));
+        setSaved(true)
+    }
+
+    const removeRecipeFromFavourites = () => {
+        const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
+        savedRecipes.forEach(savedRecipe => {
+            if (savedRecipe.recipe.uri === recipe.recipe.uri) {
+                const index = savedRecipes.indexOf(savedRecipe)
+                if (index > -1) {
+                    savedRecipes.splice(index, 1)
+                    localStorage.setItem(`savedRecipes`, JSON.stringify(savedRecipes));;
+                }
+                setSaved(false);
+            }
+        })
+    }
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+
+        const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
+        savedRecipes.forEach(savedRecipe => {
+            if (savedRecipe.recipe.uri === recipe.recipe.uri) {
+                setSaved(true);
+            }
+        })
+        
+    }, [recipe.recipe.uri]);
+    
     return (
         <motion.div className="recipe__page"
         initial={{ opacity: 0}}
@@ -65,7 +108,11 @@ function Recipe() {
                         )}
                     </div>
                     <div className="recipe__fav">
-                        <FavoriteIcon className="icon" />
+                        {saved ? (
+                            <FavoriteIcon className="fav__icon" onClick={() => { removeRecipeFromFavourites(); updateCount(); }}/>
+                        ) : (
+                            <FavoriteBorderIcon className="fav__icon" onClick={() => { saveRecipeToFavourites(); updateCount(); }} />
+                        )}
                     </div>
                 </div>
                 <span className="bar"></span>
@@ -125,7 +172,7 @@ function Recipe() {
                             <h2>Link</h2>
                             <div className="recipe__info">
                                 <LanguageIcon className="info__icon"/>
-                                <a href={recipe.recipe.url} target="_blank">{recipe.recipe.label}</a>
+                                <a href={recipe.recipe.url} target="_blank" rel="noreferrer">{recipe.recipe.label}</a>
                             </div>
                         </div>
                         <div className="info__mealType">

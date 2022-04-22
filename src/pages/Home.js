@@ -3,7 +3,6 @@ import { motion} from 'framer-motion/dist/framer-motion'
 
 import HeroContent from '../components/Home/HeroContent';
 import Blog from '../components/Home/Blog';
-import Newsletter from '../components/Home/Newsletter';
 
 function Home() {
     return (
