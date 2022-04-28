@@ -1,0 +1,34 @@
+.toast__container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    .recipe__added {
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 6rem;
+        padding: 0 0 0 1rem;
+        border: 1px solid $chefPink;
+        img {
+            width: 4.5rem;
+            left: .75rem;
+            top: .75rem;
+            position: absolute;
+        }
+        p {
+            position: absolute;
+            color: $dark; 
+            right: 3.5rem;
+            top: .9rem;
+            font-size: .9rem;
+            padding: 0;
+            width: 100%;
+        }
+        .Toastify__close-button {
+            position: absolute;
+            right: .5rem;
+            top: .5rem;
+        }
+    }
+}

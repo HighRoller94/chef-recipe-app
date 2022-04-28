@@ -12,11 +12,12 @@ import Favourites from './pages/Favourites';
 
 // COMPONENTS
 
-import Search from './components/Search';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import ScrollToTop from './ScrollToTop';
+
+// STYLES
 
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/styles.scss'
@@ -47,7 +48,7 @@ function App() {
     <div className="app">
       <Router>
       <ToastContainer 
-        autoClose={2000}
+        autoClose={false}
         transition={Slide}
         hideProgressBar="true"
         position="top-right" 
@@ -74,7 +75,6 @@ function App() {
           </Route>
           <Route path='/'>
             <Navbar savedCount={savedCount} />
-            <Search />
             <Home />
             <Footer />
           </Route>

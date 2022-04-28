@@ -86,10 +86,7 @@ function Navbar({ savedCount }) {
                         <h4>{savedCount}</h4>
                         <Link to="/recipes"><FavoriteIcon className="fav__icon"/></Link>
                     </div>
-                    
-                    
                 </div>
-                
             </div>
         </div>
     )

@@ -10,8 +10,6 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 
-
-
 function Recipe({ recipe, count, updateCount }) {
     const [saved, setSaved] = useState("");
 

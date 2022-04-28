@@ -129,9 +129,8 @@
 }
 
 .nav .navbar .nav__left .navbar__menu .navbar__item .navbar__links {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: white;
-  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
 }
 
@@ -286,10 +285,9 @@
   }
   .nav .navbar .nav__left .navbar__menu .navbar__item .navbar__links {
     color: #1c1c1c;
-    opacity: 0.4;
+    opacity: 0.8;
     font-weight: 400;
-    font-size: 1.1rem;
-    border-bottom: 2px solid transparent;
+    font-size: 1rem;
   }
   .nav .navbar .nav__left .navbar__menu .navbar__item .navbar__links:hover {
     color: black;
@@ -329,7 +327,7 @@
     height: 60px;
   }
   .nav .navbar {
-    width: 65%;
+    width: 60%;
   }
   .nav .navbar .nav__left .navbar__logo {
     display: -webkit-box;
@@ -360,7 +358,7 @@
     margin: 0 1rem;
   }
   .nav .navbar .nav__left .navbar__menu .navbar__item .navbar__links {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
   .nav .navbar .nav__right {
     display: -webkit-box;
@@ -452,7 +450,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   background-color: rgba(255, 255, 255, 0.6);
-  border-radius: .5rem;
+  border-radius: 3px;
   width: 22rem;
   height: 3.5rem;
   opacity: .6;
@@ -630,9 +628,9 @@
     height: 3.5rem;
   }
   .search__section .search .form .search__box input {
-    font-size: .9rem;
-    font-weight: 500;
-    margin-right: 20px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #2c2c2c;
   }
   .search__section .search .form .search__box input::-webkit-input-placeholder {
     font-size: .9rem;
@@ -697,12 +695,13 @@
 .content__page .content__container .content__text h1 {
   font-size: 1.75rem;
   width: 75%;
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Helvetica Neue', sans-serif;
   color: #1c1c1c;
 }
 
 .content__page .content__container .content__text h4 {
   margin-top: .5rem;
+  letter-spacing: .2rem;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -776,16 +775,18 @@
 
 @media screen and (min-width: 1312px) {
   .content__page {
-    width: 80%;
+    width: 100%;
     margin-top: 4rem;
+  }
+  .content__page .content__container {
+    margin: 0 auto;
+    width: 87%;
   }
   .content__page .content__container .content__text h1 {
     margin-top: 0;
     font-size: 2.5rem;
-    width: 60%;
   }
   .content__page .content__container .content__text p {
-    width: 60%;
     margin-top: 2rem;
     font-size: .95rem;
   }
@@ -849,7 +850,7 @@
 }
 
 .blog__container .blog__header h1 {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 1.75rem;
   color: #1c1c1c;
   width: 90%;
@@ -858,6 +859,7 @@
 .blog__container .blog__header p {
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
+  letter-spacing: .2rem;
   font-weight: 300;
   color: #ec8694;
   font-size: .9rem;
@@ -947,7 +949,7 @@
     margin-top: .75rem;
   }
   .blog__container .blog__images {
-    width: 70%;
+    width: 75%;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
@@ -3428,53 +3430,6 @@
 body {
   overflow-x: hidden;
   background-color: #fcfcfc;
-}
-
-.toast__container {
-  margin-top: 4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.toast__container .recipe__added {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  height: 6rem;
-  padding: 0 0 0 rem;
-}
-
-.toast__container .recipe__added img {
-  width: 5rem;
-  left: .5rem;
-  top: .5rem;
-  position: absolute;
-}
-
-.toast__container .recipe__added p {
-  position: absolute;
-  color: #1c1c1c;
-  right: 3.5rem;
-  top: .5rem;
-  font-size: .9rem;
-  padding: 0;
-  width: 50%;
-  -webkit-box-flex: .3;
-      -ms-flex: .3;
-          flex: .3;
 }
 
 .scroll__top {
