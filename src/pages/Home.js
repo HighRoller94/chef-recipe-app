@@ -26,7 +26,7 @@ function Home() {
     }, []);
 
     return (
-        <motion.div className="hero__section"
+        <motion.div className="home__page"
             initial={{ opacity: 0}}
             animate={{ opacity: 1}}
             exit={{ opacity: 0}}>
@@ -49,22 +49,20 @@ function Home() {
                     </form>
                 </div>
             </div>
-            <div className="content__page" data-aos="fade-up">
-                <div className="content__container">
-                    <div className="content__imagery">
-                        <div className="main__image">
-                            <img src={image1} alt="" />
-                        </div>
-                        <div className="secondary__images">
-                            <img src={image2} alt="" />
-                            <img src={image3} alt="" />
-                        </div>
+            <div className="content__container" data-aos="fade-up">
+                <div className="content__imagery">
+                    <div className="main__image">
+                        <img src={image1} alt="" />
                     </div>
-                    <div className="content__text">
-                        <h1>Top 10 Recipes for Christmas and New Year</h1>
-                        <h4>by john doe</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et delore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo...</p>
+                    <div className="secondary__images">
+                        <img src={image2} alt="" />
+                        <img src={image3} alt="" />
                     </div>
+                </div>
+                <div className="content__text">
+                    <h1>Top 10 Recipes for Christmas and New Year</h1>
+                    <h4>by john doe</h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et delore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo...</p>
                 </div>
             </div>
             <div className="blog__container" data-aos="fade-up">

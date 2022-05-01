@@ -48,10 +48,11 @@ function App() {
     <div className="app">
       <Router>
       <ToastContainer 
-        autoClose={false}
+        autoClose={2000}
         transition={Slide}
+        limit={1}
         hideProgressBar="true"
-        position="top-right" 
+        position="top-center" 
         className="toast__container" 
         toastClassName="recipe__added"
       />

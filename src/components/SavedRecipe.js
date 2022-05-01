@@ -10,9 +10,9 @@ function SavedRecipe({ recipe, updateCount }) {
 
     const RecipeRemovedToast = () => {
         return (
-            <div>
+            <div className="recipe__toast">
                 <img src={recipe.recipe.image} alt="recipe__image" />
-                <p>{recipe.recipe.label} removed from favourites</p>
+                <p>{recipe.recipe.label} removed from favourites!</p>
             </div>
         )
     };

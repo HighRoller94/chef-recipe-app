@@ -16,21 +16,25 @@ function Recipe({ recipe, count, updateCount }) {
     const RecipeAddedToast = () => {
         return (
             <Link to="/recipes">
-                <img src={recipe.recipe.image} alt="recipe__image" />
-                <p>{recipe.recipe.label} added to favourites!</p>
+                <div className="recipe__toast">
+                    <img src={recipe.recipe.image} alt="recipe__image" />
+                    <p>{recipe.recipe.label} added to favourites!</p>
+                </div>
             </Link>
         )
     };
 
     const displayAddedMsg = () => {
         toast(
-            RecipeAddedToast, {toastId: "1"}
+            RecipeAddedToast, {
+                toastId: "1"
+            }
         );
     }
 
     const RecipeRemovedToast = () => {
         return (
-            <div>
+            <div className="recipe__toast">
                 <img src={recipe.recipe.image} alt="recipe__image" />
                 <p>{recipe.recipe.label} removed from favourites!</p>
             </div>

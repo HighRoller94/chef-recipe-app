@@ -7,7 +7,7 @@
     .favourites__header {
         display: flex;
         flex-direction: column;
-        width: 86%;
+        width: 90%;
         margin: 7rem auto 2rem auto;
         .favourites__title {
             width: 100%;
@@ -88,7 +88,7 @@
         display: grid;
         justify-content: center;
         width: 100%;
-        grid-template-columns: repeat(1, 86%);
+        grid-template-columns: repeat(1, 90%);
         gap: 2rem;
         margin: 0 auto;
         padding-top: 1.5rem;

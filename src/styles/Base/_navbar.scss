@@ -197,16 +197,15 @@
                     top: 0;
                     left: 0;
                     padding: 0;
-                    margin-left: 2rem;
+                    margin-left: 1.5rem;
                     margin-top: 0.2rem;
                     .navbar__item {
-                        margin: 0 .75em;
+                        margin: 0 .6rem;
                         .navbar__links {
                             color: $dark;
                             opacity: 0.8;
                             font-weight: 400;
-                            font-size: 1rem;
-                            
+                            font-size: .9rem;
                             &:hover {
                                 color: black;
                                 opacity: 1;
@@ -220,15 +219,15 @@
                     display: flex;
                     font-family: 'Source Sans Pro', sans-serif;
                     font-weight: 400;
-                    font-size: 1rem;
+                    font-size: .95rem;
                 }
                 .nav__icons {
                     display: flex;
                     margin-left: .5rem;
                     margin-right: 2rem;
                     .nav__icon {
-                        margin: 0 .4rem;
-                        transform: scale(.9);
+                        margin: 0 .3rem;
+                        transform: scale(.8);
                         &:hover {
                             cursor: pointer;
                             opacity: 0.7;
@@ -249,7 +248,7 @@
     .nav {
         height: 60px;
         .navbar {
-            width: 60%;
+            width: 65%;
             .nav__left {
                 .navbar__logo {
                     display: flex;
@@ -269,7 +268,7 @@
                 .navbar__menu {
                     margin-left: 2rem;
                     .navbar__item {
-                        margin: 0 1rem;
+                        margin: 0 .85rem;
                         .navbar__links {
                             font-size: 1rem;
                         }

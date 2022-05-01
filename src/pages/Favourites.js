@@ -27,6 +27,7 @@ function Favourites({ updateCount, savedCount }) {
         getUserSavedRecipes();
     }, [savedCount]);
 
+    console.log(recipes.length)
     return (
     <motion.div className="favourites__page"
             initial={{ opacity: 0}}

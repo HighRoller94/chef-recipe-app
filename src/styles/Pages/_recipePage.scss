@@ -23,19 +23,19 @@
                 h1 {
                     font-family: 'Source Serif Pro', serif;
                     font-weight: 600;
-                    font-size: 2.5rem;
-                    width: 80vw;
+                    font-size: 2.25rem;
+                    width: 90%;
                     color: $dark;
                 }
                 .recipe__infos {
                     color: $chefPink;
-                    font-size: 1.15rem;
+                    font-size: 1rem;
                     margin-top: .5rem;
                     .recipe__label {
                         display: flex;
                         p {
                             color: $chefPink;
-                            font-size: 1.15rem;
+                            font-size: 1rem;
                             .dot {
                                 color: $dark;
                                 margin: 0 10px;
@@ -60,12 +60,12 @@
                     }
                     p {
                         margin-left: .5rem;
-                        font-size: 1.25rem;
+                        font-size: 1rem;
                     }
                 }
             }
             .recipe__fav {
-                margin-top: 1rem;
+                margin-top: 1.5rem;
                 .fav__icon {
                     color: $chefPink;
                     font-size: 2.75rem;
