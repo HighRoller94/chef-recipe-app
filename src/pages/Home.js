@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion/dist/framer-motion'
-import { useHistory } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import Aos from 'aos';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -12,13 +12,13 @@ import image3 from '../assets/hero/image3.svg';
 import "aos/dist/aos.css";
 
 function Home() {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('')
 
     const getSearch = e => {
         setQuery(search);
-        history.push(`/search/${search}`)
+        navigate(`/search/${search}`)
     }
 
     useEffect(() => {

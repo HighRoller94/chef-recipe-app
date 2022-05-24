@@ -226,7 +226,7 @@
 .home__page .content__container .content__text h1 {
   font-size: 1.75rem;
   width: 85%;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Source Serif Pro', serif;
   color: #1c1c1c;
 }
 
@@ -234,7 +234,7 @@
   margin-top: .5rem;
   letter-spacing: .2rem;
   text-transform: uppercase;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Source Serif Pro', serif;
   font-weight: 300;
   color: #ec8694;
   font-size: .9rem;
@@ -323,7 +323,7 @@
 }
 
 .home__page .blog__container .blog__header h1 {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Source Serif Pro', serif;
   font-size: 1.75rem;
   color: #1c1c1c;
   width: 90%;
@@ -331,7 +331,7 @@
 
 .home__page .blog__container .blog__header p {
   text-transform: uppercase;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Source Serif Pro', serif;
   letter-spacing: .2rem;
   font-weight: 300;
   color: #ec8694;
@@ -586,7 +586,7 @@
   font-family: 'Source Serif Pro', serif;
   font-weight: 600;
   font-size: 2.5rem;
-  color: #1c1c1c;
+  color: #333333;
 }
 
 .favourites__page .favourites__header .favourites__title p {
@@ -939,7 +939,7 @@
   font-weight: 600;
   font-size: 2.25rem;
   width: 90%;
-  color: #1c1c1c;
+  color: #333333;
 }
 
 .recipe__page .recipe__container .recipe__header .recipe__title .recipe__infos {
@@ -960,7 +960,7 @@
 }
 
 .recipe__page .recipe__container .recipe__header .recipe__title .recipe__infos .recipe__label p .dot {
-  color: #1c1c1c;
+  color: #333333;
   margin: 0 10px;
   font-size: .7rem;
 }
@@ -1086,7 +1086,7 @@
 .recipe__page .recipe__container .recipe__grid .recipe__firstCol .recipe__nutritional .recipe__nutrients p {
   margin-left: auto;
   font-size: 1rem;
-  color: #1c1c1c;
+  color: #333333;
 }
 
 .recipe__page .recipe__container .recipe__grid .recipe__firstCol .recipe__nutritional .recipe__sugars {
@@ -1108,7 +1108,7 @@
 
 .recipe__page .recipe__container .recipe__grid .recipe__firstCol .recipe__nutritional .recipe__sugars p {
   margin-left: auto;
-  color: #1c1c1c;
+  color: #333333;
 }
 
 .recipe__page .recipe__container .recipe__grid .recipe__secondCol {
@@ -1129,7 +1129,7 @@
   display: flex;
   height: 1px;
   margin: 1.75rem 0;
-  background-color: #1c1c1c;
+  background-color: #333333;
   width: 100%;
   opacity: 0.5;
 }
@@ -1151,7 +1151,7 @@
 }
 
 .recipe__page .recipe__container .recipe__grid .recipe__secondCol .recipe__ingredients .recipe__counter h3 {
-  color: #1c1c1c;
+  color: #333333;
   font-weight: 300;
   font-size: 1.7rem;
 }
@@ -1166,7 +1166,7 @@
   margin-left: .25rem;
   font-size: 1.5rem;
   margin-top: -.1rem;
-  color: #1c1c1c;
+  color: #333333;
 }
 
 .recipe__page .recipe__container .recipe__grid .recipe__secondCol .recipe__ingredients li {
@@ -1260,7 +1260,7 @@
 
 .recipe__page .recipe__container .border span {
   height: 1px;
-  background-color: #1c1c1c;
+  background-color: #333333;
   width: 100%;
 }
 
@@ -1297,7 +1297,7 @@
     display: -ms-flexbox;
     display: flex;
     height: 1px;
-    background-color: #1c1c1c;
+    background-color: #333333;
     width: 89.5%;
     margin: 2.5rem auto;
     opacity: 0.2;
@@ -1442,7 +1442,7 @@
     font-size: 1.15rem;
   }
   .recipe__page .recipe__container .recipe__header .recipe__title .recipe__infos .recipe__label p .dot {
-    color: #1c1c1c;
+    color: #333333;
     margin: 0 10px;
     font-size: .7rem;
   }
@@ -1632,7 +1632,7 @@
   font-family: 'Source Serif Pro', serif;
   font-weight: 600;
   font-size: 2rem;
-  color: #1c1c1c;
+  color: #333333;
 }
 
 .results__page .search__header .search__title p {
@@ -2537,10 +2537,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  max-width: 500px;
+  width: 90%;
+  max-width: 450px;
   top: 3.5rem !important;
-  left: 50% !important;
+  right: 1.7rem !important;
 }
 
 .toast__container .recipe__added {
@@ -2553,6 +2553,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  border-radius: 0 !important;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .toast__container .recipe__added .recipe__toast {
@@ -2567,7 +2570,7 @@
 
 .toast__container .recipe__added .recipe__toast p {
   margin-left: 1.5rem;
-  color: #1c1c1c;
+  color: #333333;
   font-size: 1rem;
   padding: 0;
   font-family: 'Helvetica', sans-serif;
@@ -2581,7 +2584,7 @@
     width: 50%;
     max-width: 400px;
     top: 4.5rem !important;
-    left: 70% !important;
+    right: 2.2rem !important;
   }
   .toast__container .recipe__added {
     -webkit-box-shadow: none;
@@ -2604,7 +2607,7 @@
   }
   .toast__container .recipe__added .recipe__toast p {
     margin-left: 1rem;
-    color: #1c1c1c;
+    color: #333333;
     font-size: .95rem;
     padding: 0;
   }
@@ -2617,7 +2620,7 @@
     display: flex;
     width: 30%;
     top: 4.5rem !important;
-    left: 69% !important;
+    right: 18% !important;
     max-width: 500px;
   }
   .toast__container .recipe__added {
@@ -2641,8 +2644,8 @@
   }
   .toast__container .recipe__added .recipe__toast p {
     margin-left: 1rem;
-    color: #1c1c1c;
-    font-size: 1.1rem;
+    color: #333333;
+    font-size: 1rem;
     padding: 0;
   }
 }
@@ -2702,8 +2705,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   background-color: white;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.02);
-          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.02);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
   z-index: 10;
 }
 
@@ -2872,7 +2875,7 @@
   display: -ms-flexbox;
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
-  color: #1c1c1c;
+  color: #333333;
   font-weight: 400;
   font-size: 1rem;
 }
@@ -2971,7 +2974,7 @@
     margin: 0 .6rem;
   }
   .nav .navbar .nav__left .navbar__menu .navbar__item .navbar__links {
-    color: #1c1c1c;
+    color: #333333;
     opacity: 0.8;
     font-weight: 400;
     font-size: .9rem;
@@ -3086,7 +3089,7 @@
 
 .footer {
   width: 100%;
-  background-color: #1c1c1c;
+  background-color: #333333;
 }
 
 .footer .footer__container {
@@ -3352,6 +3355,5 @@
 
 body {
   overflow-x: hidden;
-  background-color: #fcfcfc;
 }
 /*# sourceMappingURL=styles.css.map */

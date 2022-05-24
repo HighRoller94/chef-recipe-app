@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
-import { motion } from 'framer-motion/dist/framer-motion';
+import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
 import SearchIcon from '@material-ui/icons/Search';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
@@ -8,7 +8,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import SavedRecipe from '../components/SavedRecipe';
 
 function Favourites({ updateCount, savedCount }) {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
@@ -20,7 +20,7 @@ function Favourites({ updateCount, savedCount }) {
 
     const getSearch = e => {
         setQuery(search);
-        history.push(`/search/${search}`)
+        navigate(`/search/${search}`)
     }
 
     useEffect(() => {

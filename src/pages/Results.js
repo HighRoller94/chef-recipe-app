@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-import { motion} from 'framer-motion/dist/framer-motion'
+import { useNavigate } from 'react-router-dom';
+import { motion} from 'framer-motion';
 
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -15,7 +15,7 @@ import '../styles/styles.scss'
 
 function Results({ updateCount }) {
     const [recipes, setRecipes] = useState([]);
-    const history = useHistory();
+    const navigate = useNavigate();
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
     const { id } = useParams();
@@ -60,7 +60,7 @@ function Results({ updateCount }) {
 
     const getSearch = e => {
         setQuery(search);
-        history.push(`/search/${search}`)
+        navigate(`/search/${search}`)
     }
 
     return (

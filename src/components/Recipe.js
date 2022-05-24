@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 
-
 import "aos/dist/aos.css";
 
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';

@@ -4,7 +4,7 @@
 $chefPink: #ec8694;
 $chefLightPink: #ffd7ef;
 $chefGrey: #B9BAb8;
-$dark: #1c1c1c;
+$dark: #333333;
 
 @import './Pages/all';
 @import './Components/all';
@@ -22,5 +22,5 @@ $dark: #1c1c1c;
 
 body {
     overflow-x: hidden;
-    background-color: #fcfcfc;
+
 }

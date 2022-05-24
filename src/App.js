@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion'
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { ToastContainer, Slide } from 'react-toastify';
 
 // PAGES
@@ -12,15 +12,13 @@ import Favourites from './pages/Favourites';
 
 // COMPONENTS
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-
+import Layout from './components/Layout/Layout';
 import ScrollToTop from './ScrollToTop';
 
 // STYLES
 
 import 'react-toastify/dist/ReactToastify.css';
-import './styles/styles.scss'
+import './styles/styles.scss';
 
 function App() {
   const [savedCount, setSavedCount] = useState();
@@ -58,28 +56,16 @@ function App() {
       />
         <AnimatePresence exitBeforeEnter>
         <ScrollToTop />
-        <Switch>
-          <Route path='/recipes'>
-            <Navbar savedCount={savedCount} />
-            <Favourites updateCount={updateCount} savedCount={savedCount}/>
-            <Footer />
+        <Routes>
+          <Route element={ 
+            <Layout savedCount={savedCount}/>
+          }>
+            <Route path="recipes" element={<Favourites updateCount={updateCount} savedCount={savedCount}/>} />
+            <Route path="search/:id" element={<Results updateCount={updateCount}/>} />
+            <Route path=":label" element={<Recipe updateCount={updateCount} count={count}/>} />
+            <Route path="/" element={<Home/>} />
           </Route>
-          <Route path='/search/:id'>
-            <Navbar savedCount={savedCount} />
-            <Results updateCount={updateCount}/>
-            <Footer />
-          </Route>
-          <Route path='/:label'>
-            <Navbar savedCount={savedCount} />
-            <Recipe count={count} updateCount={updateCount} />
-            <Footer />
-          </Route>
-          <Route path='/'>
-            <Navbar savedCount={savedCount} />
-            <Home />
-            <Footer />
-          </Route>
-        </Switch>
+        </Routes>
         </AnimatePresence>
       </Router>
     </div>
