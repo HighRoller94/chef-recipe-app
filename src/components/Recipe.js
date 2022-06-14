@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
 
 import { toast } from 'react-toastify';
 
@@ -79,18 +80,17 @@ function Recipe({ recipe, count, updateCount }) {
                 setSaved(true);
             } 
         })
+        Aos.init({ duration: 2000 });
+
     }, [recipe]);
 
     return (
             <div className="recipe">
-                <Link to={{
-                pathname: `/${recipe.recipe.label}`,
-                state: {
-                    recipe: recipe.recipe
-                }
-                }}
+                <Link 
+                    to={`/${recipe?.recipe.label}`}
+                    state={{ recipe: recipe.recipe }}
                 >
-                <div className="recipe__image">
+                <div className="recipe__image" data-aos="fade" >
                     <img src={recipe.recipe.image} alt="" />
                 </div>
                 </Link>

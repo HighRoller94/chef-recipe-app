@@ -42,12 +42,9 @@ function SavedRecipe({ recipe, updateCount }) {
             whileHover={{opacity: 1}}
             layout
             >
-            <Link to={{
-            pathname: `/${recipe.recipe.label}`,
-            state: {
-                recipe: recipe.recipe
-            }
-            }}
+            <Link 
+                to={`/${recipe?.recipe.label}`}
+                state={{ recipe: recipe.recipe }}
             >
             <div className="recipe__image">
                 <img src={recipe.recipe.image} alt="" />
