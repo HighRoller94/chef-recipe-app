@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 6px -1px, rgba(0, 0, 0, 0.02) 0px 2px 4px -1px;
     z-index: 10;
     .navbar {
         display: flex;
@@ -126,6 +126,10 @@
                 color: $dark;
                 font-weight: 400;
                 font-size: 1rem;
+                cursor: pointer;
+                &:hover {
+                    opacity: .8;
+                }
             }
             .nav__icons {
                 display: flex;
@@ -134,6 +138,7 @@
                 .nav__icon {
                     margin: 0 .2rem;
                     transform: scale(.8);
+                    transition: 300ms ease-in;
                     &:hover {
                         cursor: pointer;
                         opacity: 0.7;
@@ -246,7 +251,7 @@
 
 @media screen and (min-width: 1312px) {
     .nav {
-        height: 60px;
+        height: 64px;
         .navbar {
             width: 65%;
             .nav__left {
@@ -258,7 +263,7 @@
                     margin-top: 0;
                     .nav__logo {
                         margin-top: -.1rem;
-                        font-size: 2.35rem;
+                        font-size: 2.5rem;
                         transition: 200ms ease-in;
                         &:hover {
                             opacity: 0.8;

@@ -6,7 +6,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function Navbar({ savedCount }) {
     
-    
     useEffect(() => {
         const menu = document.querySelector(".navbar__toggle");
         const navMenu = document.querySelector(".navbar__menu");
@@ -47,9 +46,7 @@ function Navbar({ savedCount }) {
                         <li className="navbar__item">
                             <Link to="/recipes"><h1 className="navbar__links">My Recipes</h1></Link>
                         </li>
-                        <li className="navbar__item">
-                            <Link to="/recipes"><h1 className="navbar__links">Meal Planner</h1></Link>
-                        </li>
+
                     </ul>
                 </div>
                 <div className="nav__right">

@@ -54,7 +54,6 @@ function App() {
         className="toast__container" 
         toastClassName="recipe__added"
       />
-        <AnimatePresence exitBeforeEnter>
         <ScrollToTop />
         <Routes>
           <Route element={ 
@@ -66,7 +65,6 @@ function App() {
             <Route path="/" element={<Home/>} />
           </Route>
         </Routes>
-        </AnimatePresence>
       </Router>
     </div>
   );

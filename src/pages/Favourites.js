@@ -51,10 +51,6 @@ function Favourites({ updateCount, savedCount }) {
                     </div>
                 </div>
             </form>
-            <div className="favourites__filter">
-                <h4>Filter</h4>
-                <KeyboardArrowDownIcon className="icon"/>
-            </div>
             <span className="divider"></span>
         </div>
         

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import SearchIcon from '@material-ui/icons/Search';
 
-function Search() {
+import RefineSearch from './RefineSearch';
+
+function Search({ getParams }) {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
     const [query, setQuery] = useState('');
@@ -26,10 +26,7 @@ function Search() {
                     </div>
                 </div>
             </form>
-            <div className="filter">
-                <p>Filter</p>
-                <KeyboardArrowDownIcon className="filter__icon" />
-            </div>
+            <RefineSearch getParams={getParams} />
         </div>
     )
 }

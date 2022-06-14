@@ -1,0 +1,15 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .filter__show {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .filter__options {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}

@@ -1,26 +1,29 @@
 .toast__container {
     display: flex;
-    width: 90%;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
     max-width: 450px;
     top: 3.5rem !important;
     right: 1.7rem !important;
-    
     .recipe__added {
         box-shadow: none;
         display: flex;
         flex-direction: row;
         border-radius: 0 !important;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        
+        border: 1px solid $chefPink;
         .recipe__toast {
             display: flex;
+            align-items: center;
+            
             img {
                 width: 15%;
             }
             p {
                 margin-left: 1.5rem;
                 color: $dark; 
-                font-size: 1rem;
+                font-size: 1.1rem;
                 padding: 0;
                 font-family: 'Helvetica', sans-serif;
             }
@@ -32,7 +35,7 @@
     .toast__container {
         display: flex;
         width: 50%;
-        max-width: 400px;
+        max-width: 500px;
         top: 4.5rem !important;
         right: 2.2rem !important;
         .recipe__added {
@@ -45,9 +48,9 @@
                     width: 20%;
                 }
                 p {
-                    margin-left: 1rem;
                     color: $dark; 
-                    font-size: .95rem;
+                    font-size: 1.1rem;
+                    width: 70%;
                     padding: 0;
                 }
             }
@@ -61,7 +64,7 @@
         width: 30%;
         top: 4.5rem !important;
         right: 18% !important;
-        max-width: 500px;
+        max-width: 400px;
         .recipe__added {
             box-shadow: none;
             display: flex;
@@ -74,7 +77,7 @@
                 p {
                     margin-left: 1rem;
                     color: $dark; 
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                     padding: 0;
                 }
             }

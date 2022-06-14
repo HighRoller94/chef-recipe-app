@@ -68,7 +68,7 @@ function Recipe({ updateCount }) {
             }
         })
         
-    }, [recipe.recipe.uri]);
+    }, [recipe]);
     
     return (
         <motion.div className="recipe__page"
@@ -84,7 +84,7 @@ function Recipe({ updateCount }) {
                             {recipe?.recipe.dietLabels[0] ? (
                                 <div className="recipe__label">
                                     <p>{recipe?.recipe.dietLabels[0]}</p>
-                                    {recipe.recipe.dietLabels[1] ? (
+                                    {recipe?.recipe.dietLabels[1] ? (
                                         <p><FiberManualRecordIcon className="dot"/>{recipe.recipe.dietLabels[1]}</p>
                                     ) : (
                                         null
