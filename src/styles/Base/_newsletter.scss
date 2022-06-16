@@ -1,0 +1,13 @@
+.newsletter__container {
+    background-color: $chefGrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+    }
+}
