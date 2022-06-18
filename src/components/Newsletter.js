@@ -16,7 +16,7 @@ function Newsletter() {
                 </div>
                 <form className="newsletter__input">
                     <input type="text" placeholder="Enter email address"/>
-                    <button type="submit" onClick={submitEmailForNewsletter}disabled={!email}></button>
+                    <button type="submit" onClick={submitEmailForNewsletter} >Signup</button>
                 </form>
             </div>
         </div>
