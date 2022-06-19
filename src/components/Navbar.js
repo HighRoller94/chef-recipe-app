@@ -3,50 +3,52 @@ import { Link } from 'react-router-dom'
 
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 
 function Navbar({ savedCount }) {
-    
-    useEffect(() => {
-        const menu = document.querySelector(".navbar__toggle");
-        const navMenu = document.querySelector(".navbar__menu");
-        menu.addEventListener("click", () => {
-            menu.classList.toggle('active')
-            navMenu.classList.toggle('active')
-        })
-        
-        const links = document.querySelectorAll(".navbar__links");
-        links.forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove('active');
-                menu.classList.toggle('active');
-            })
-        })
+    const [sidebar, setSidebar] = useState(false);
+    const [button, setButton] = useState(true);
 
-        
+    const showMobileMenu = () => setSidebar(!sidebar);
+    const closeMobileMenu = () => setSidebar(false);
+
+    const showMobileMenuButton = () => {
+        if (window.innerWidth <= 768) {
+            setButton(false);
+        } else {
+            setButton(true);
+        }
+    };
+
+    useEffect(() => {
+        showMobileMenuButton();
     }, [])
+
+    window.addEventListener('resize', showMobileMenuButton);
 
     return (
         <div className="nav">
             <div className="navbar">
                 <div className="nav__left">
-                    <div className="navbar__toggle">
-                        <span className="menu__bar"></span>
-                        <span className="menu__bar"></span>
-                        <span className="menu__bar"></span>
-                    </div>
+                    {!sidebar ? (
+                        <MenuIcon className="navbar__toggle" onClick={showMobileMenu} />
+                    ) : (
+                        <CloseIcon className="navbar__toggle" onClick={closeMobileMenu} />
+                    )}
                     <div className="navbar__logo" >
-                        <RestaurantIcon className="logo" />
                         <Link to="/"><h1 className="nav__logo">eatz</h1></Link>
                     </div>
-                    
-                    <ul className="navbar__menu">
+                    <ul className={sidebar ? 'navbar__menu active' : 'navbar__menu'}>
                         <li className="navbar__item">
-                            <Link to="/"><h1 className="navbar__links">Search</h1></Link>
+                            <Link onClick={closeMobileMenu} to="/"><h1 className="navbar__links">Search</h1></Link>
                         </li>
                         <li className="navbar__item">
-                            <Link to="/recipes"><h1 className="navbar__links">My Recipes</h1></Link>
+                            <Link onClick={closeMobileMenu} to="/recipes"><h1 className="navbar__links">My Recipes</h1></Link>
                         </li>
-
+                        <li className="navbar__item">
+                            <Link onClick={closeMobileMenu} to="/recipes"><h1 className="navbar__links">Meal Planner</h1></Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="nav__right">
