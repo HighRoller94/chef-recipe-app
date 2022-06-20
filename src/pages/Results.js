@@ -71,11 +71,10 @@ function Results({ updateCount }) {
                 <KeyboardArrowUpIcon className="icon" />
             </div>
             <div className="search__header">
-                <div className="float__bar"></div>
                 <div className="search__title">
                     <h1>Search results for "<span>{id}</span>"</h1>
-                    {recipes === 0 ? (
-                        <p>Searching...</p>
+                    {recipes == 0 ? (
+                        <p>Fetching results...</p>
                     ) : (
                         <p>{totalPages?.toLocaleString()} matching results</p>
                     )}

@@ -50,6 +50,12 @@
                 border: none;
                 text-transform: uppercase;
                 outline: none;
+                transition: 200ms ease-in;
+                &:hover {
+                    cursor: pointer;
+                    background-color: white;
+                    color: $chefPink;
+                }
             }
         }
     }
@@ -94,19 +100,27 @@
 
 @media screen and (min-width: 1312px) {
     .newsletter__container {
+        display: flex;
+        align-items: center;
         .container {
             width: 60%;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            margin: 3rem 0;
             .newsletter__header {
                 h1 {
                     font-size: 2.2rem;
                 }
+                h2 {
+                    margin-top: 0;
+                }
             }
             .newsletter__input {
+                margin-top: 0;
                 input {
                     margin-left: 2rem;
+                    
                     padding: 1rem;
                 }
                 button {

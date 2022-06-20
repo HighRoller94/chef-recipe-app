@@ -5,7 +5,12 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 function RefineSearch({ getParams }) {
   const [params, setParams] = useState([])
+  const [show, setShow] = useState(false);
 
+  const openAdvancedSearch = () => {
+
+  }
+  
   const highProtein = () => {
     setParams('&diet=high-protein')
     console.log(params)
@@ -18,7 +23,7 @@ function RefineSearch({ getParams }) {
 
   return (
     <div className="filter">
-      <div className="filter__show">
+      <div className="filter__show" id="filter">
         <p>Filter</p>
         <KeyboardArrowDownIcon className="filter__icon" />
       </div>

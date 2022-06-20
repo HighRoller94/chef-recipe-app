@@ -1,7 +1,7 @@
 .filter {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 92%;
     .filter__show {
         display: flex;
         justify-content: flex-end;
@@ -11,5 +11,17 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .filter {
+        width: 101%;
+    }
+}
+
+@media screen and (min-width: 1316px) {
+    .filter {
+        width: 100%;
     }
 }
