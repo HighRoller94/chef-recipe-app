@@ -28,49 +28,8 @@
                 font-size: .9rem;
             }
             span {
+                font-size: 2.5rem;
                 color: $chefPink;
-            }
-        }
-    }
-    .search {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .form {
-            background-color: white;
-            .search__box {
-                margin-top: 1rem;
-                display: flex;
-                align-items: center;
-                button {
-                    display: none;
-                }
-                .search__icon {
-                    margin-left: 1rem;
-                    opacity: 0.7;
-                    font-size: 1.5rem;
-                }
-                input {
-                    outline: none;
-                    padding: .75rem 1rem;
-                    border: none;
-                    width: 60vw;
-                    height: 1.5rem;
-                    font-size: 1rem;
-                    font-weight: 300;
-                    color: #2c2c2c;
-                    display: flex;
-                    justify-content: center;
-                    &::placeholder {
-                        font-size: .95rem;
-                        text-align: center;
-                    }
-                    &:focus::placeholder {
-                        color: transparent;
-                    }
-                }
             }
         }
     }
@@ -86,7 +45,7 @@
         margin: 0 auto;
         margin-top: 1rem;
         padding-top: 3rem;
-        padding-bottom: 5rem;
+        padding-bottom: 4rem;
     }
 }
 
@@ -100,12 +59,6 @@
             justify-content: left;
             text-align: left;
             width: 93%;
-            .float__bar {
-                background-color: $chefLightPink;
-                height: 5rem;
-                width: .5rem;
-                margin-top: .9rem;
-            }
             .search__title {
                 border: 0;
                 margin: 0;
@@ -125,27 +78,13 @@
                 }
             }
         }
-        .search {
-            margin-top: 2rem;
-            width: 93%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            .form {
-                .search__box {
-                    input {
-                        width: 40vw;
-                    }
-                }
-            }
-            
-        }
         .recipes {
             padding-top: 2rem;
             display: grid;
             grid-template-columns: repeat(2, 46%);
             width: 100%;
             grid-gap: 30px;
+            padding-bottom: 4rem;
         }
         .arrow {
             display: flex;
@@ -162,7 +101,7 @@
     .results__page {
         .search__header {
             padding-top: 8.5rem;
-            width: 75%;
+            width: 78%;
             .float__bar {
                 height: 5.5rem;
                 margin-top: 1rem;
@@ -170,14 +109,6 @@
             .search__title {
                 h1 {
                     font-size: 2.75rem;
-                }
-            }
-        }
-        .search {
-            width: 75%;
-            .form {
-                .search__box {
-                    width: 20vw;
                 }
             }
         }
