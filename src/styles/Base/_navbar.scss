@@ -165,11 +165,10 @@
                     margin-left: 1.5rem;
                     margin-top: 0.2rem;
                     .navbar__item {
-                        margin: 0 .6rem;
+                        margin: 0 .75rem;
                         .navbar__links {
-                            color: $dark;
-                            opacity: 0.8;
-                            font-size: 1.1rem;
+                            color: $chefGrey;
+                            font-size: 1rem;
                             font-family: 'Source Sans Pro', sans-serif;
                             font-weight: 400;
                             &:hover {
@@ -236,6 +235,9 @@
                     margin-left: 2rem;
                     .navbar__item {
                         margin: 0 .85rem;
+                        .navbar__links {
+                            font-size: 1rem;
+                        }
                     }
                 }
             }

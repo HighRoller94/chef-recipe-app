@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Aos from 'aos';
 
 import SearchIcon from '@material-ui/icons/Search';
+import Title from '../components/Title';
 
 import image1 from '../assets/hero/image1.svg';
 import image2 from '../assets/hero/image2.svg';
@@ -34,7 +35,7 @@ function Home() {
             animate={{ opacity: 1}}
             exit={{ opacity: 0}}>
             <div className="search__section">
-                <div className="search">
+                <div className="home__search">
                     <div className="search__header">
                         <h1>Find a Recipe</h1>
                     </div>
@@ -52,6 +53,7 @@ function Home() {
                     </form>
                 </div>
             </div>
+            <Title title="blog posts" />
             <div className="content__container" data-aos="fade-up">
                 <div className="content__imagery">
                     <div className="main__image">
@@ -82,6 +84,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <Title title="blog posts" />
         </motion.div>
     )
 }
